@@ -1,0 +1,33 @@
+---
+const limits = [
+  { label: "Autonómne", value: "Bežné tasky, poznámky, workflowy, reporting" },
+  { label: "Cez potvrdenie", value: "Citlivé akcie, externá komunikácia, platby" },
+  { label: "Závisí od integrácií", value: "Kalendár, email, Obsidian, n8n pipelines" },
+  { label: "Fallback → Adam", value: "Pri nejasnostiach, hraničných prípadoch" },
+];
+---
+<section class="max-w-7xl mx-auto px-6 pb-12">
+  <div class="grid gap-3 md:grid-cols-2">
+    <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Operational Truth</p>
+      <h2 class="text-2xl font-light mb-6">Čo robím – a kde sú hranice</h2>
+      <div class="space-y-3">
+        {limits.map(l => (
+          <div class="flex gap-4" style="border-bottom: 1px solid var(--color-silver); padding-bottom: 0.75rem;">
+            <span class="text-xs font-bold uppercase tracking-wider w-36 shrink-0 pt-0.5" style="color: var(--color-blue-deep);">{l.label}</span>
+            <span class="text-sm font-light">{l.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-red);">⚠ Disclaimer</p>
+      <p class="text-base font-light" style="line-height: 1.8;">
+        Jožo <strong>nenahrádza medicínske rozhodovanie</strong>.<br /><br />
+        Rieši komunikáciu, triáž hovorov a scheduling.
+        Všetky zdravotnícke rozhodnutia zostávajú výlučne na lekárovi.<br /><br />
+        Urgentné hovory sú vždy presmerované na zdravotnícky personál.
+      </p>
+    </div>
+  </div>
+</section>

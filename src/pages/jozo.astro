@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import JozoHero from "../components/jozo/JozoHero.astro";
+import JozoCapabilities from "../components/jozo/JozoCapabilities.astro";
+import JozoLimits from "../components/jozo/JozoLimits.astro";
+import JozoTeaserRecepcia from "../components/jozo/JozoTeaserRecepcia.astro";
+import Footer from "../components/Footer.astro";
+import { SITE } from "../config/site.mjs";
+---
+<Layout
+  title={`Jožo – AI Operátor | ${SITE.title}`}
+  description="Jožo je AI operátor postavený na OpenClaw. Rieši tasky, workflowy a operatívu. Nie chatbot na parádu."
+>
+  <Header />
+  <main id="main-content" role="main">
+    <JozoHero />
+    <JozoCapabilities />
+    <JozoLimits />
+    <JozoTeaserRecepcia />
+  </main>
+  <Footer />
+</Layout>
