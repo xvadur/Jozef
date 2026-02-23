@@ -1,23 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Features from "../components/Features.astro";
-import CTA from "../components/CTA.astro";
+import HeroGrid from "../components/home/HeroGrid.astro";
 import Footer from "../components/Footer.astro";
 import { SITE } from "../config/site.mjs";
 ---
 
 <Layout
   title={SITE.title}
-  description="A minimal, modern starter template for building fast websites with Astro. Includes React, Tailwind CSS, Framer Motion, and more."
+  description={SITE.description}
   canonicalURL={SITE.url}
 >
   <Header />
   <main id="main-content" role="main">
-    <Hero />
-    <Features />
-    <CTA />
+    <HeroGrid />
   </main>
   <Footer />
 </Layout>

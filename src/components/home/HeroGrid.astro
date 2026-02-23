@@ -1,0 +1,148 @@
+---
+import BrutalistButton from "../ui/BrutalistButton.astro";
+---
+
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <!-- Asymmetric grid -->
+  <div
+    class="hero-grid grid gap-3"
+    style="grid-template-columns: 1fr 1fr 280px; grid-template-rows: auto auto auto;"
+  >
+    <!-- Hero block: col 1-2, row 1 -->
+    <div
+      class="col-span-2 p-10 flex flex-col justify-between min-h-[260px]"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);"
+    >
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue);">
+          AI Striko · Slovensko
+        </p>
+        <h1 class="text-5xl font-light leading-tight mb-4" style="color: var(--color-text);">
+          10 rokov urgentná medicína.<br />
+          <span style="color: var(--color-blue);">Dnes AI.</span>
+        </h1>
+        <p class="text-lg font-light max-w-lg" style="color: var(--color-text); opacity: 0.7;">
+          Nie som random tech startup. Som kolega, ktorý pozná váš svet – a vie ho zlepšiť.
+        </p>
+      </div>
+      <div class="flex gap-3 mt-6 flex-wrap">
+        <BrutalistButton href="/ai-recepcia" variant="blue" size="md">
+          AI Recepcia
+        </BrutalistButton>
+        <BrutalistButton href="/jozo" variant="white" size="md">
+          Čo je Jožo?
+        </BrutalistButton>
+      </div>
+    </div>
+
+    <!-- Book a Call block: col 3, row 1 -->
+    <div
+      class="p-8 flex flex-col items-start justify-between min-h-[260px]"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: #FF3EA5;"
+    >
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest mb-2 text-white opacity-80">
+          Porozprávajme sa
+        </p>
+        <h2 class="text-2xl font-bold text-white leading-tight">
+          Book<br />a Call
+        </h2>
+      </div>
+      <BrutalistButton
+        href="https://cal.com/xvadur"
+        variant="white"
+        size="sm"
+        target="_blank"
+        class="mt-4"
+      >
+        Rezervovať →
+      </BrutalistButton>
+    </div>
+
+    <!-- AI Striko block: col 1, row 2 -->
+    <div
+      class="p-8 flex flex-col justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
+    >
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">
+        Firma
+      </p>
+      <div>
+        <h3 class="text-3xl font-bold mb-2">AI Striko</h3>
+        <p class="text-sm font-light" style="opacity: 0.7;">
+          Pomáhame podnikateľom adoptovať AI.<br />Bez zbytočnej paniky.
+        </p>
+      </div>
+    </div>
+
+    <!-- What is Jožo block: col 2, row 2 -->
+    <div
+      class="p-8 flex flex-col justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);"
+    >
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">
+        Môj AI suite
+      </p>
+      <div>
+        <h3 class="text-2xl font-semibold mb-2">Kto je Jožo?</h3>
+        <p class="text-sm font-light mb-4" style="opacity: 0.7;">
+          Jožo je môj nakonfigurovaný AI business asistent postavený na OpenClaw.
+          Rieši AI recepciu, blog, automatizácie.
+        </p>
+        <a href="/jozo" class="text-sm font-bold uppercase tracking-wider hover:underline" style="color: var(--color-blue-deep);">
+          Zistiť viac →
+        </a>
+      </div>
+    </div>
+
+    <!-- Jožo teaser block: col 3, row 2 -->
+    <div
+      class="p-8 flex flex-col justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-blue);"
+    >
+      <p class="text-xs font-bold uppercase tracking-widest mb-2 text-white opacity-80">
+        Jožo
+      </p>
+      <p class="text-4xl" aria-hidden="true">🦞</p>
+      <p class="text-sm font-bold text-white mt-2">
+        OpenClaw · AI Suite
+      </p>
+    </div>
+
+    <!-- Blog teaser: full width, row 3 -->
+    <div
+      class="col-span-3 p-8 flex items-center justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);"
+    >
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">
+          Jožov denník
+        </p>
+        <h3 class="text-xl font-semibold">Posledný zápisom z blogu</h3>
+        <p class="text-sm font-light mt-1" style="opacity: 0.6;">Čoskoro – zápisky zo zákulisia budovania AI Striko.</p>
+      </div>
+      <BrutalistButton href="/blog" variant="black" size="sm">
+        Blog →
+      </BrutalistButton>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .col-span-2, .col-span-3 {
+      grid-column: span 1 !important;
+    }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1fr 1fr !important;
+    }
+    .col-span-3 {
+      grid-column: span 2 !important;
+    }
+  }
+</style>
