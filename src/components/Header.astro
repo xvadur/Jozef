@@ -1,0 +1,148 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header
+  class="w-full py-4 px-4 border-b border-gray-100 bg-white/90 backdrop-blur-sm sticky top-0 z-50"
+  role="banner"
+>
+  <nav
+    class="max-w-6xl mx-auto flex items-center justify-between"
+    aria-label="Main navigation"
+  >
+    <a
+      href="/"
+      class="text-xl font-bold text-gray-900 tracking-tight hover:text-sky-500 transition-colors"
+      aria-label="xvadur - domov"
+    >
+      xvadur
+    </a>
+
+    <!-- Mobile menu button -->
+    <button
+      type="button"
+      class="md:hidden p-2 text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 rounded-lg"
+      aria-label="Otvoriť menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      id="mobile-menu-button"
+    >
+      <Icon name="tabler:menu-2" class="w-6 h-6" aria-hidden="true" />
+    </button>
+
+    <!-- Desktop navigation -->
+    <ul class="hidden md:flex items-center gap-8" role="list">
+      <li>
+        <a
+          href="#xvadur"
+          class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium"
+        >
+          xvadur
+        </a>
+      </li>
+      <li>
+        <a
+          href="#openclaw"
+          class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium"
+        >
+          openclaw
+        </a>
+      </li>
+      <li>
+        <a
+          href="#blog"
+          class="text-gray-500 hover:text-gray-900 transition-colors text-sm font-medium"
+        >
+          blog
+        </a>
+      </li>
+      <li>
+        <a
+          href="#kontakt"
+          class="px-4 py-2 bg-sky-400 text-white rounded-lg hover:bg-sky-500 transition-colors text-sm font-medium"
+        >
+          kontakt
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-gray-100 bg-white mt-2"
+    role="menu"
+    aria-labelledby="mobile-menu-button"
+  >
+    <ul class="flex flex-col py-4" role="list">
+      <li>
+        <a
+          href="#xvadur"
+          class="block px-4 py-3 text-gray-600 hover:bg-sky-50 hover:text-gray-900 transition-colors text-sm font-medium"
+          role="menuitem"
+        >
+          xvadur
+        </a>
+      </li>
+      <li>
+        <a
+          href="#openclaw"
+          class="block px-4 py-3 text-gray-600 hover:bg-sky-50 hover:text-gray-900 transition-colors text-sm font-medium"
+          role="menuitem"
+        >
+          openclaw
+        </a>
+      </li>
+      <li>
+        <a
+          href="#blog"
+          class="block px-4 py-3 text-gray-600 hover:bg-sky-50 hover:text-gray-900 transition-colors text-sm font-medium"
+          role="menuitem"
+        >
+          blog
+        </a>
+      </li>
+      <li>
+        <a
+          href="#kontakt"
+          class="block px-4 py-3 text-sky-500 hover:bg-sky-50 transition-colors text-sm font-medium"
+          role="menuitem"
+        >
+          kontakt
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !menuButton.contains(e.target as Node) &&
+        !mobileMenu.contains(e.target as Node) &&
+        !mobileMenu.classList.contains("hidden")
+      ) {
+        menuButton.setAttribute("aria-expanded", "false");
+        mobileMenu.classList.add("hidden");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+        menuButton.setAttribute("aria-expanded", "false");
+        mobileMenu.classList.add("hidden");
+        menuButton.focus();
+      }
+    });
+  }
+</script>

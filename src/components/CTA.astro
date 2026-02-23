@@ -1,0 +1,151 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+---
+
+<!-- openclaw section -->
+<section id="openclaw" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <ScrollReveal client:idle delay={0.1}>
+      <div class="mb-16">
+        <span
+          class="inline-block text-sm font-medium text-sky-500 tracking-widest uppercase mb-4"
+        >
+          projekt
+        </span>
+        <h2 class="text-5xl font-bold text-gray-900 mb-6">openclaw</h2>
+        <p class="text-xl text-gray-500 max-w-2xl leading-relaxed">
+          Môj osobný AI agent. Volám ho <strong class="text-gray-700 font-medium">Jarvis</strong> — nie preto, že sa to hodí, ale preto, že to sedí.
+          openclaw je framework na ktorom ho staviam, a toto je miesto kde ťa naučím ako na to.
+        </p>
+      </div>
+    </ScrollReveal>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <!-- Jarvis card -->
+      <ScrollReveal client:idle delay={0.2} scale={true}>
+        <div class="bg-sky-50 rounded-2xl p-8 border border-sky-100 h-full">
+          <div
+            class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm"
+          >
+            <Icon
+              name="tabler:brain"
+              class="w-6 h-6 text-sky-500"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Jarvis</h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Osobný AI agent postavený na openclaw. Spravuje môj kalendár,
+            pamätá kontext, pomáha s rozhodnutiami. Nie showcase — reálny
+            nástroj ktorý každý deň používam a vylepšujem.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">
+              <Icon
+                name="tabler:check"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Calendar & task management
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon
+                name="tabler:check"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Kontext a pamäť cez n8n
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon
+                name="tabler:check"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Voice & chat rozhranie
+            </li>
+            <li class="flex items-center gap-2">
+              <Icon
+                name="tabler:check"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Stále vo vývoji — verejne
+            </li>
+          </ul>
+        </div>
+      </ScrollReveal>
+
+      <!-- Blog card -->
+      <ScrollReveal client:idle delay={0.3} scale={true}>
+        <div
+          id="blog"
+          class="bg-gray-900 rounded-2xl p-8 border border-gray-800 h-full flex flex-col"
+        >
+          <div
+            class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-6"
+          >
+            <Icon
+              name="tabler:writing"
+              class="w-6 h-6 text-sky-400"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Builder Blog</h3>
+          <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+            Dokumentujem každý krok — nastavenie openclaw, chyby ktoré robím,
+            čo funguje a čo nie. Ak chceš postaviť vlastného Jarvisa, toto je
+            tvoj sprievodca.
+          </p>
+          <div class="space-y-3 mb-8 text-sm text-gray-400">
+            <div class="flex items-center gap-2">
+              <Icon
+                name="tabler:pencil"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Ako nainštalovať openclaw od nuly
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon
+                name="tabler:pencil"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Prvé kroky — agent ktorý naozaj robí niečo
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon
+                name="tabler:pencil"
+                class="w-4 h-4 text-sky-400 flex-shrink-0"
+                aria-hidden="true"
+              />
+              Integrácie, tools, memory — prakticky
+            </div>
+          </div>
+          <a
+            href="#kontakt"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-sky-400 text-white rounded-xl hover:bg-sky-500 transition-colors font-medium text-sm w-fit"
+          >
+            <span>Daj mi vedieť keď vyjde</span>
+            <Icon
+              name="tabler:arrow-right"
+              class="w-4 h-4"
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+
+    <!-- Divider quote -->
+    <ScrollReveal client:idle delay={0.2}>
+      <div class="text-center py-8 border-t border-gray-100">
+        <p class="text-gray-400 text-lg font-light italic max-w-xl mx-auto">
+          "Nie som developer. Som človek ktorý sa učí — a zdieľam to celé."
+        </p>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>

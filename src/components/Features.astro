@@ -1,0 +1,214 @@
+---
+import ScrollReveal from "./ScrollReveal.tsx";
+import { Icon } from "astro-icon/components";
+---
+
+<section id="xvadur" class="bg-slate-50 py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <ScrollReveal client:idle delay={0.1}>
+      <div class="mb-16">
+        <span
+          class="inline-block text-sm font-medium text-sky-500 tracking-widest uppercase mb-4"
+        >
+          o mne
+        </span>
+        <h2 class="text-5xl font-bold text-gray-900 mb-6">xvadur</h2>
+        <p class="text-xl text-gray-500 max-w-2xl leading-relaxed">
+          Zdravotná sestra s 10-ročnou praxou na urgentnom príjme. V roku 2025
+          som odišiel z medicíny a začal budovať s AI — od nuly, v reálnom čase,
+          so všetkým čo k tomu patrí.
+        </p>
+      </div>
+    </ScrollReveal>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      <ScrollReveal client:idle delay={0.2} scale={true}>
+        <div
+          class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-sky-200 hover:shadow-sm transition-all"
+        >
+          <div
+            class="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center mb-5"
+          >
+            <Icon
+              name="tabler:heart-rate-monitor"
+              class="w-5 h-5 text-sky-500"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 mb-2">
+            10 rokov na urgente
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Urgentný príjem Bratislava. Rýchle rozhodnutia, práca pod tlakom,
+            starostlivosť o ľudí v kritických momentoch.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal client:idle delay={0.3} scale={true}>
+        <div
+          class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-sky-200 hover:shadow-sm transition-all"
+        >
+          <div
+            class="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center mb-5"
+          >
+            <Icon
+              name="tabler:robot"
+              class="w-5 h-5 text-sky-500"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 mb-2">
+            AI agenty & automatizácie
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            n8n, function calling, calendar integrácie, voice agenty. Reálne
+            prototypy, nie len teória.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal client:idle delay={0.4} scale={true}>
+        <div
+          class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-sky-200 hover:shadow-sm transition-all"
+        >
+          <div
+            class="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center mb-5"
+          >
+            <Icon
+              name="tabler:messages"
+              class="w-5 h-5 text-sky-500"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 mb-2">
+            800 000 slov s AI
+          </h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            600+ promptov od júla 2025. Intenzívne učenie cez konverzáciu —
+            môj primárny spôsob ako absorbovať nové veci.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal client:idle delay={0.5} scale={true}>
+        <div
+          class="p-6 bg-white rounded-2xl border border-gray-100 hover:border-sky-200 hover:shadow-sm transition-all"
+        >
+          <div
+            class="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center mb-5"
+          >
+            <Icon
+              name="tabler:tool"
+              class="w-5 h-5 text-sky-500"
+              aria-hidden="true"
+            />
+          </div>
+          <h3 class="text-base font-semibold text-gray-900 mb-2">Builder</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            MVP, prototypy, reálne projekty. Práve staviam AI recepciu s
+            partnerom Vladom — od nuly, s každou chybou navonok.
+          </p>
+        </div>
+      </ScrollReveal>
+    </div>
+
+    <!-- Co som sa naucil timeline-style -->
+    <ScrollReveal client:idle delay={0.3}>
+      <div class="bg-white rounded-2xl border border-gray-100 p-8 md:p-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8">
+          Čo som sa naučil s AI
+        </h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <div
+              class="text-xs font-medium text-sky-500 tracking-widest uppercase"
+            >
+              Technické
+            </div>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                n8n workflows & automatizácie
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Function calling (OpenAI, Anthropic)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Calendar & booking integrácie
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Voice AI agenty
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-2">
+            <div
+              class="text-xs font-medium text-sky-500 tracking-widest uppercase"
+            >
+              Procesné
+            </div>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Prompt engineering
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Testovanie a iterácia MVP
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Dokumentovanie procesu učenia
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Self-branding & online prítomnosť
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-2">
+            <div
+              class="text-xs font-medium text-sky-500 tracking-widest uppercase"
+            >
+              Aktuálne projekty
+            </div>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                AI recepcia (s Vladom)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                openclaw / Jarvis agent
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Builder blog (tento web)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-sky-300 rounded-full flex-shrink-0"
+                ></span>
+                Sekundárne AI vedomie (dataset)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
