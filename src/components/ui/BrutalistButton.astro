@@ -1,0 +1,57 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'pink' | 'blue' | 'white' | 'black';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  target?: string;
+}
+
+const {
+  href,
+  variant = 'black',
+  size = 'md',
+  class: className = '',
+  target,
+} = Astro.props;
+
+const variantStyles = {
+  pink: 'bg-[#FF3EA5] text-white hover:bg-[#e0358f]',
+  blue: 'bg-[#4FC3F7] text-[#1A1A2E] hover:bg-[#3ab4e8]',
+  white: 'bg-white text-[#1A1A2E] hover:bg-[#f0f0f0]',
+  black: 'bg-[#1A1A2E] text-white hover:bg-[#2a2a4e]',
+};
+
+const sizeStyles = {
+  sm: 'px-3 py-1.5 text-xs',
+  md: 'px-5 py-2.5 text-sm',
+  lg: 'px-7 py-3.5 text-base',
+};
+
+const baseStyles = `
+  inline-flex items-center justify-center gap-2
+  font-bold uppercase tracking-widest
+  border-2 border-[#1A1A2E]
+  shadow-[4px_4px_0px_#1A1A2E]
+  transition-all duration-100
+  hover:shadow-[2px_2px_0px_#1A1A2E] hover:translate-x-[2px] hover:translate-y-[2px]
+  active:shadow-none active:translate-x-[4px] active:translate-y-[4px]
+  cursor-pointer select-none
+`.replace(/\n\s+/g, ' ').trim();
+---
+
+{href ? (
+  <a
+    href={href}
+    target={target}
+    class={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+  >
+    <slot />
+  </a>
+) : (
+  <button
+    class={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+  >
+    <slot />
+  </button>
+)}
