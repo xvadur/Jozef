@@ -1,294 +1,127 @@
-# Astro Base
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4FC3F7,100:FF3EA5&height=160&section=header&text=xvadur&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Striko%20%C2%B7%20Landing%20Page&descAlignY=58" />
+</p>
 
-A minimal, modern starter template for building fast websites with Astro. This template includes everything you need to get started with a beautiful landing page, complete with animations, icons, and content management capabilities.
+<p align="center">
+  <a href="https://github.com/xvadur/Jozef"><img alt="Repo" src="https://img.shields.io/badge/repo-xvadur%2FJozef-111827?style=for-the-badge&logo=github" /></a>
+  <img alt="Branch" src="https://img.shields.io/badge/branch-main-16a34a?style=for-the-badge" />
+  <img alt="Astro" src="https://img.shields.io/badge/Astro-5-FF5D01?style=for-the-badge&logo=astro&logoColor=white" />
+  <img alt="Tailwind" src="https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</p>
 
-## ✨ Features
+<p align="center">
+  <img src="https://media1.tenor.com/m/sAH7fvnqRNQAAAAd/gojo-satoru-gojo.gif" width="760" alt="gojo – you can't touch this" />
+</p>
 
-- **🚀 Astro** - Lightning-fast static site generation
-- **⚛️ React** - Component-based UI library for interactive components
-- **🎨 Tailwind CSS v4** - Utility-first CSS framework for rapid styling
-- **🎭 Framer Motion** - Smooth scroll reveal animations with spring physics
-- **🎯 Astro Icons** - Beautiful icon component library with Tabler icon set
-- **📝 MDX** - Write JSX in your Markdown documents
-- **💅 Sass** - CSS preprocessor with variables, mixins, and nesting
-- **📖 Tailwind Typography** - Beautiful typography styles for markdown content
+# xvadur · AI Striko
 
-## 🛠️ Tech Stack
+Toto je **xvadur.com** – landing page Adama Rudavského.
+10 rokov urgentná medicína. Dnes AI.
 
-### Core Framework
+Nie je to len stránka. Je to konverzný stroj pre **AI Recepciu** a portál pre **Jožo** – AI operátor postavený na OpenClaw.
 
-- **Astro** `^5.16.6` - The web framework for content-driven websites
+Brutalist-asymmetric grid. Space Grotesk. ION BLUE. Žiadny bullshit.
 
-### Integrations
+## Stránky
 
-- **@astrojs/react** `^4.4.2` - React integration for Astro
-- **@astrojs/mdx** `^4.3.13` - MDX support for writing JSX in Markdown
-- **astro-icon** `^1.1.5` - Icon component library
+| Route | Popis |
+|-------|-------|
+| `/` | Homepage – asymetrický hero grid, AI Striko intro, Book a Call |
+| `/jozo` | Jožo identity – kto je Jožo, schopnosti, Operational Truth, disclaimer |
+| `/ai-recepcia` | Conversion page pre kliniky – problem → pricing → ROI → demo |
+| `/blog` | Jožov denník – builder blog |
 
-### Styling
+## Tech Stack
 
-- **tailwindcss** `^4.1.18` - Utility-first CSS framework
-- **@tailwindcss/vite** `^4.1.18` - Tailwind CSS Vite plugin
-- **@tailwindcss/typography** `^0.5.19` - Typography plugin for beautiful markdown styling
-- **sass** `^1.97.2` - CSS preprocessor
+- **Astro 5** – multi-page, static output
+- **React 19** – islands pre interaktívne komponenty
+- **Tailwind v4** – utility CSS
+- **Framer Motion 12** – scroll-reveal animácie so stagger delays
+- **Space Grotesk** – font (Google Fonts)
+- **Tabler Icons** – cez astro-icon
 
-### UI & Animation
-
-- **framer-motion** `^12.24.7` - Production-ready motion library for React
-- **react** `^19.2.3` - UI library
-- **react-dom** `^19.2.3` - React DOM renderer
-
-### Icons
-
-- **@iconify-json/tabler** `^1.2.26` - Tabler icon set for astro-icon
-
-## 📁 Project Structure
+## Design System
 
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/          # Static assets (images, SVGs)
-│   ├── components/      # Reusable Astro components
-│   │   ├── CTA.astro           # Call-to-action section
-│   │   ├── Features.astro      # Features showcase
-│   │   ├── Footer.astro        # Site footer
-│   │   ├── Header.astro        # Site header/navigation
-│   │   ├── Hero.astro          # Hero section
-│   │   ├── ScrollReveal.tsx    # Scroll animation component
-│   │   └── SassExample.astro   # Sass usage example
-│   ├── layouts/
-│   │   └── Layout.astro        # Base page layout
-│   ├── pages/          # Routes (file-based routing)
-│   │   ├── index.astro         # Homepage
-│   │   ├── about.astro         # About page
-│   │   ├── contact.astro      # Contact page
-│   │   ├── features.astro      # Features page
-│   │   └── example.mdx         # MDX example page
-│   └── styles/
-│       ├── global.css          # Global styles & Tailwind imports
-│       └── example.scss        # Sass example file
-├── astro.config.mjs    # Astro configuration
-├── tailwind.config.mjs # Tailwind configuration
-└── package.json
+--color-bg:         #F7F8FA   (off-white pozadie)
+--color-silver:     #DDE3EA   (DRIFT SILVER – karty)
+--color-blue:       #4FC3F7   (ION BLUE – primary accent)
+--color-pink:       #FF3EA5   (CTA – sparingly)
+--color-text:       #1A1A2E   (dark navy text)
+--shadow-brutal:    4px 4px 0px #1A1A2E
+--border-brutal:    2px solid #1A1A2E
 ```
 
-## 🚀 Getting Started
+Brutalist hover: shadow sa zmenší na `2px 2px` + `translateY(2px)`.
 
-### Prerequisites
+## Quickstart
 
-- Node.js 18+
-- npm, pnpm, or yarn
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/jonnysmillie/astro-base.git
-   cd astro-base
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:4321`
-
-## 📜 Available Scripts
-
-| Command           | Action                                           |
-| :---------------- | :----------------------------------------------- |
-| `npm install`     | Installs dependencies                            |
-| `npm run dev`     | Starts local dev server at `localhost:4321`      |
-| `npm run build`   | Build your production site to `./dist/`          |
-| `npm run preview` | Preview your build locally                       |
-| `npm run astro`   | Run CLI commands like `astro add`, `astro check` |
-
-## 🎨 Styling
-
-### Tailwind CSS
-
-This project uses Tailwind CSS v4 for styling. All components use Tailwind utility classes.
-
-**Global Styles:**
-
-- Located in `src/styles/global.css`
-- Imports Tailwind CSS
-- Includes Tailwind Typography plugin for markdown styling
-
-**Configuration:**
-
-- `tailwind.config.mjs` - Tailwind configuration with Typography plugin
-
-### Sass
-
-Sass is installed and ready to use. You can use Sass in component `<style>` blocks:
-
-```astro
-<style lang="scss">
-  $primary-color: #000;
-
-  .my-component {
-    color: $primary-color;
-  }
-</style>
+```bash
+git clone https://github.com/xvadur/Jozef.git
+cd Jozef
+npm install
+npm run dev
 ```
 
-See `src/components/SassExample.astro` for a complete example.
+→ [http://localhost:4321](http://localhost:4321)
 
-## 🎭 Components
+## Build & Deploy
 
-### ScrollReveal
-
-A React component using Framer Motion for scroll-triggered animations:
-
-```tsx
-import ScrollReveal from "./ScrollReveal.tsx";
-
-<ScrollReveal client:load delay={0.2} scale={true}>
-  <div>Your content here</div>
-</ScrollReveal>;
+```bash
+npm run build    # statický output do dist/
+npm run preview  # preview prod buildu
 ```
 
-**Props:**
+Deploy: pripojiť repo na **Vercel** alebo **Netlify** → auto-deploy na každý `git push main`.
 
-- `delay` - Animation delay in seconds (default: 0)
-- `direction` - Animation direction: "up" | "down" | "left" | "right" (default: "up")
-- `distance` - Distance to travel in pixels (default: 50)
-- `scale` - Enable scale animation (default: false)
+## Štruktúra
 
-### Icons
-
-Use Tabler icons with astro-icon:
-
-```astro
----
-import { Icon } from "astro-icon/components";
----
-
-<Icon name="tabler:heart" class="w-6 h-6" />
+```
+src/
+├── pages/
+│   ├── index.astro          # Homepage
+│   ├── jozo.astro           # Jožo agent identity
+│   ├── ai-recepcia.astro    # Conversion page pre kliniky
+│   └── blog/
+│       ├── index.astro
+│       └── [slug].astro
+├── components/
+│   ├── ui/                  # BrutalistButton, AnimatedBlock
+│   ├── home/                # HeroGrid
+│   ├── jozo/                # JozoHero, Capabilities, Limits, Teaser
+│   ├── ai-recepcia/         # 9 komponentov – full conversion funnel
+│   └── blog/                # PostCard
+├── layouts/
+│   └── Layout.astro
+├── styles/
+│   └── global.css
+└── config/
+    └── site.mjs
 ```
 
-Browse available icons at [Tabler Icons](https://tabler.io/icons).
+## Architecture
 
-## 📝 MDX Support
-
-Write JSX in your Markdown documents. Create `.mdx` files in the `src/pages` directory:
-
-```mdx
----
-import Layout from "../layouts/Layout.astro";
----
-
-<Layout>
-  # My MDX Page This is **markdown** with <Component /> support!
-</Layout>
+```mermaid
+flowchart LR
+  A["xvadur.com /"] --> B["HeroGrid\nasym. 3-col"]
+  A --> C["/jozo\nAgent identity"]
+  A --> D["/ai-recepcia\nConversion page"]
+  A --> E["/blog\nJožov denník"]
+  C --> F["OpenClaw\nJožo 🦞"]
+  D --> G["cal.com/xvadur\nBook a Call"]
+  D --> H["adam@xvadur.com\nDemo CTA"]
 ```
 
-See `src/pages/example.mdx` for a complete example.
+## Kontakt
 
-## 🎯 Pages
-
-- **/** - Homepage with hero, features, and CTA sections
-- **/features** - Features showcase page
-- **/about** - About page
-- **/contact** - Contact form page
-- **/example** - MDX example page demonstrating markdown features
-
-## 🔧 Configuration
-
-### Astro Config (`astro.config.mjs`)
-
-```javascript
-export default defineConfig({
-  integrations: [
-    react(), // React support
-    icon(), // Astro Icons
-    mdx(), // MDX support
-  ],
-  vite: {
-    plugins: [tailwindcss()],
-  },
-});
-```
-
-### Tailwind Config (`tailwind.config.mjs`)
-
-```javascript
-import typography from "@tailwindcss/typography";
-
-export default {
-  plugins: [typography],
-};
-```
-
-## 📦 Key Dependencies
-
-### Core
-
-- **Astro** - Web framework
-- **React** - UI library for interactive components
-- **Tailwind CSS** - Utility-first CSS framework
-
-### Integrations
-
-- **@astrojs/react** - React integration
-- **@astrojs/mdx** - MDX support
-- **astro-icon** - Icon component library
-
-### Styling
-
-- **@tailwindcss/typography** - Typography plugin
-- **sass** - CSS preprocessor
-
-### Animation
-
-- **framer-motion** - Motion library
-
-### Icons
-
-- **@iconify-json/tabler** - Tabler icon set
-
-## 🎨 Design Features
-
-- **Black & White Color Scheme** - Minimal, clean design
-- **Responsive Layout** - Mobile-first approach
-- **Smooth Animations** - Scroll reveal effects with spring physics
-- **Modern Typography** - Beautiful text styling with Tailwind Typography
-- **Component-Based** - Reusable, modular components
-
-## 📚 Learn More
-
-- [Astro Documentation](https://docs.astro.build)
-- [Tailwind CSS Documentation](https://tailwindcss.com)
-- [Framer Motion Documentation](https://www.framer.com/motion/)
-- [Astro Icons Documentation](https://www.astroicon.dev)
-- [MDX Documentation](https://mdxjs.com)
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🙏 Credits
-
-Built with:
-
-- [Astro](https://astro.build)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Tabler Icons](https://tabler.io/icons)
+- **Email:** adam@xvadur.com
+- **Booking:** [cal.com/xvadur](https://cal.com/xvadur)
+- **Web:** [xvadur.com](https://xvadur.com)
 
 ---
 
-**Ready to build something amazing?** [Download this template](https://github.com/jonnysmillie/astro-base) and start creating!
+*Nie som random tech startup. Som kolega, ktorý pozná váš svet – a vie ho zlepšiť.*
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF3EA5,100:4FC3F7&height=120&section=footer" />
+</p>
