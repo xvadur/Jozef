@@ -1,0 +1,78 @@
+---
+const tiers = [
+  {
+    name: "STARTER",
+    setup: "€1,000",
+    monthly: "€400/mes",
+    forWho: "Malá klinika · <800 hovorov/mes",
+    features: ["AI voice recepcia", "Kalendár integrácia", "Základný reporting", "Email support"],
+    highlight: false,
+  },
+  {
+    name: "GROWTH",
+    badge: "⭐ NAJPOPULÁRNEJŠÍ",
+    setup: "€1,500",
+    monthly: "€500/mes",
+    forWho: "Stredná klinika · 800–1,500 hovorov",
+    features: ["Všetko zo Starter", "Dashboard & analytics", "Priority support (2h)", "SMS pripomienky", "Web widget"],
+    highlight: true,
+  },
+  {
+    name: "PREMIUM",
+    setup: "€2,000",
+    monthly: "€600/mes",
+    forWho: "Veľká klinika · 1,500+ hovorov",
+    features: ["Všetko z Growth", "CRM integrácia", "Custom voice/branding", "Multi-user", "Dedicated support"],
+    highlight: false,
+  },
+];
+import BrutalistButton from "../ui/BrutalistButton.astro";
+---
+
+<section class="max-w-7xl mx-auto px-6 pb-12">
+  <div
+    class="p-8 mb-3"
+    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
+  >
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Pricing</p>
+    <h2 class="text-3xl font-light">Transparentný pricing</h2>
+    <p class="text-sm font-light mt-1" style="opacity: 0.6;">Žiadne skryté poplatky. Žiadne 3-ročné zmluvy.</p>
+  </div>
+
+  <div class="grid gap-3 md:grid-cols-3">
+    {tiers.map(tier => (
+      <div
+        class="p-8 flex flex-col justify-between"
+        style={`border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: ${tier.highlight ? 'var(--color-blue)' : 'var(--color-bg)'};`}
+      >
+        <div>
+          {tier.badge && (
+            <p class="text-xs font-bold uppercase tracking-widest mb-2" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>
+              {tier.badge}
+            </p>
+          )}
+          <h3 class="text-2xl font-bold mb-1" style={tier.highlight ? 'color: white;' : ''}>{tier.name}</h3>
+          <p class="text-3xl font-light mb-1" style={tier.highlight ? 'color: white;' : 'color: var(--color-blue-deep);'}>{tier.monthly}</p>
+          <p class="text-xs mb-4" style={tier.highlight ? 'color: white; opacity: 0.7;' : 'opacity: 0.5;'}>Setup: {tier.setup} jednorazovo</p>
+          <p class="text-xs font-bold uppercase tracking-wider mb-4" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>{tier.forWho}</p>
+          <ul class="space-y-1">
+            {tier.features.map(f => (
+              <li class="text-sm font-light flex gap-2" style={tier.highlight ? 'color: white;' : ''}>
+                <span>✓</span>{f}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="mt-6">
+          <BrutalistButton href="https://cal.com/xvadur" variant={tier.highlight ? 'white' : 'black'} size="sm" target="_blank" class="w-full justify-center">
+            Chcem demo →
+          </BrutalistButton>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-3 p-4 text-center" style="border: var(--border-brutal); background-color: var(--color-bg);">
+    <p class="text-sm font-semibold">Stojí to 1–2% vášho obratu. Návratnosť je 3–6x.</p>
+  </div>
+</section>

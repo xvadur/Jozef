@@ -1,0 +1,52 @@
+---
+import BrutalistButton from "../ui/BrutalistButton.astro";
+---
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <div class="grid gap-3" style="grid-template-columns: 1fr 1fr 260px;">
+    <div class="col-span-2 p-10 min-h-[260px] flex flex-col justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue);">
+          AI Striko · Pre kliniky
+        </p>
+        <h1 class="text-5xl font-light leading-tight mb-4">
+          Žiadne zmeškané hovory.<br />
+          <span style="color: var(--color-pink);">Žiadni stratení pacienti.</span>
+        </h1>
+        <p class="text-xl font-light max-w-xl" style="opacity: 0.7;">
+          AI recepcia, ktorá zdvihne telefón 24/7, objedná pacienta a ochráni váš príjem.
+        </p>
+      </div>
+      <div class="flex gap-3 mt-6 flex-wrap">
+        <BrutalistButton href="mailto:adam@xvadur.com" variant="pink" size="md">
+          Chcem DEMO (zadarmo)
+        </BrutalistButton>
+        <BrutalistButton href="https://cal.com/xvadur" variant="black" size="md" target="_blank">
+          Rezervovať call →
+        </BrutalistButton>
+      </div>
+    </div>
+    <div class="p-8 flex flex-col justify-between"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+      <div class="space-y-3">
+        {["24/7 dostupnosť", "Auto-objednávanie", "Triáž hovorov", "GDPR · EU hosting"].map(badge => (
+          <div class="p-3 text-xs font-bold uppercase tracking-wider text-center"
+            style="border: var(--border-brutal); background-color: var(--color-bg);">
+            ✓ {badge}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    section > div {
+      grid-template-columns: 1fr !important;
+    }
+    .col-span-2 {
+      grid-column: span 1 !important;
+    }
+  }
+</style>

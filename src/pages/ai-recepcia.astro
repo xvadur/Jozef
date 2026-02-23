@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import RecepciahHero from "../components/ai-recepcia/RecepciahHero.astro";
+import ProblemSection from "../components/ai-recepcia/ProblemSection.astro";
+import SolutionSection from "../components/ai-recepcia/SolutionSection.astro";
+import HowItWorks from "../components/ai-recepcia/HowItWorks.astro";
+import OnboardingTimeline from "../components/ai-recepcia/OnboardingTimeline.astro";
+import PricingGrid from "../components/ai-recepcia/PricingGrid.astro";
+import RoiBlock from "../components/ai-recepcia/RoiBlock.astro";
+import AboutAdam from "../components/ai-recepcia/AboutAdam.astro";
+import DemoBlock from "../components/ai-recepcia/DemoBlock.astro";
+import Footer from "../components/Footer.astro";
+import { SITE } from "../config/site.mjs";
+---
+<Layout
+  title={`AI Recepcia pre kliniky | ${SITE.title}`}
+  description="AI hlasová recepcia 24/7 pre ambulancie a kliniky. Žiadne zmeškané hovory. Typicky ROI 4–6x. Slovenská firma, GDPR."
+>
+  <Header />
+  <main id="main-content" role="main">
+    <RecepciahHero />
+    <ProblemSection />
+    <SolutionSection />
+    <HowItWorks />
+    <OnboardingTimeline />
+    <PricingGrid />
+    <RoiBlock />
+    <AboutAdam />
+    <DemoBlock />
+  </main>
+  <Footer />
+</Layout>
