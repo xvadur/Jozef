@@ -1,103 +1,24 @@
 ---
-import { Icon } from "astro-icon/components";
+const year = new Date().getFullYear();
 ---
 
 <footer
-  id="kontakt"
-  class="w-full py-16 px-4 border-t border-gray-100 bg-white"
-  role="contentinfo"
+  class="w-full mt-auto"
+  style="border-top: var(--border-brutal); background-color: var(--color-bg);"
 >
-  <div class="max-w-6xl mx-auto">
-    <div class="grid md:grid-cols-3 gap-12 mb-12">
-      <div class="md:col-span-1">
-        <a href="/" class="text-2xl font-bold text-gray-900 hover:text-sky-500 transition-colors">
-          xvadur
-        </a>
-        <p class="text-gray-400 mt-4 text-sm leading-relaxed">
-          Adam Rudavský. Former nurse, current AI builder.<br />
-          Building in public — chaos included.
-        </p>
-      </div>
-
-      <div>
-        <h2 class="text-xs font-medium text-gray-400 tracking-widest uppercase mb-5">
-          Navigácia
-        </h2>
-        <ul class="space-y-3">
-          <li>
-            <a
-              href="#xvadur"
-              class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              xvadur
-            </a>
-          </li>
-          <li>
-            <a
-              href="#openclaw"
-              class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              openclaw
-            </a>
-          </li>
-          <li>
-            <a
-              href="#blog"
-              class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              builder blog
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-xs font-medium text-gray-400 tracking-widest uppercase mb-5">
-          Kontakt
-        </h2>
-        <ul class="space-y-3">
-          <li>
-            <a
-              href="https://github.com/xvadur"
-              class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub profil (opens in new tab)"
-            >
-              <Icon name="tabler:brand-github" class="w-4 h-4" aria-hidden="true" />
-              <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/xvadur"
-              class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter / X profil (opens in new tab)"
-            >
-              <Icon name="tabler:brand-x" class="w-4 h-4" aria-hidden="true" />
-              <span>X / Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:hello@xvadur.com"
-              class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <Icon name="tabler:mail" class="w-4 h-4" aria-hidden="true" />
-              <span>hello@xvadur.com</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div>
+      <span class="text-sm font-bold uppercase tracking-wider">xvadur</span>
+      <span class="text-xs font-light ml-3" style="opacity: 0.5;">
+        · AI Striko · {year}
+      </span>
+      <p class="text-xs font-light mt-1" style="opacity: 0.4;">adam@xvadur.com</p>
     </div>
-
-    <div
-      class="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400"
-    >
-      <p>© {new Date().getFullYear()} xvadur — Adam Rudavský</p>
-      <p class="text-gray-300">building in public</p>
-    </div>
+    <nav class="flex gap-6" aria-label="Footer navigation">
+      <a href="/" class="text-xs font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors">xvadur</a>
+      <a href="/jozo" class="text-xs font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors">Jožo</a>
+      <a href="/ai-recepcia" class="text-xs font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors">AI Recepcia</a>
+      <a href="/blog" class="text-xs font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors">Blog</a>
+    </nav>
   </div>
 </footer>

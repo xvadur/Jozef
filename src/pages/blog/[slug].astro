@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const { slug } = Astro.params;
+
+export async function getStaticPaths() {
+  return [{ params: { slug: "coming-soon" } }];
+}
+---
+
+<Layout title="Čoskoro | xvadur blog">
+  <Header />
+  <main id="main-content" role="main" class="max-w-2xl mx-auto px-6 py-16">
+    <a href="/blog" class="text-xs font-bold uppercase tracking-wider hover:underline mb-8 block" style="color: var(--color-blue-deep);">
+      ← Späť na blog
+    </a>
+    <h1 class="text-4xl font-light mb-6">Čoskoro</h1>
+    <p class="text-lg font-light" style="opacity: 0.7;">
+      Jožov denník sa práve otvára. Prvý zápisom čoskoro.
+    </p>
+  </main>
+  <Footer />
+</Layout>

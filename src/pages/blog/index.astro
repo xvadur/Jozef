@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import PostCard from "../../components/blog/PostCard.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE } from "../../config/site.mjs";
+
+// Placeholder posts – replace with Astro content collections later
+const posts = [
+  {
+    title: "Čoskoro – Jožov denník sa otvára",
+    date: "2026-02-23",
+    perex: "Tu budú zápisky zo zákulisia budovania AI Striko. Nič sa nebude tajiť.",
+    slug: "coming-soon",
+    readTime: "1 min",
+  },
+];
+---
+
+<Layout
+  title={`Blog – Jožov denník | ${SITE.title}`}
+  description="Zápisky zo zákulisia budovania AI Striko. Adam píše s Jožom."
+>
+  <Header />
+  <main id="main-content" role="main" class="max-w-7xl mx-auto px-6 py-12">
+
+    <div class="mb-10" style="border-bottom: var(--border-brutal); padding-bottom: 1.5rem;">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">
+        Builder Blog
+      </p>
+      <h1 class="text-5xl font-light">Jožov denník</h1>
+      <p class="text-lg font-light mt-2" style="opacity: 0.6;">
+        Adam píše. Jožo pomáha. Vy čítate.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map(post => (
+        <PostCard {...post} />
+      ))}
+    </div>
+
+  </main>
+  <Footer />
+</Layout>

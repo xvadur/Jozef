@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  perex: string;
+  slug: string;
+  readTime?: string;
+}
+const { title, date, perex, slug, readTime = '3 min' } = Astro.props;
+---
+
+<a
+  href={`/blog/${slug}`}
+  class="block p-6 transition-all duration-100"
+  style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);"
+  onmouseenter="this.style.cssText='border: var(--border-brutal); box-shadow: 2px 2px 0px #1A1A2E; transform: translate(2px,2px); background-color: var(--color-bg);'"
+  onmouseleave="this.style.cssText='border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);'"
+>
+  <div class="flex items-center justify-between mb-3">
+    <span class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">
+      {date}
+    </span>
+    <span class="text-xs font-light" style="opacity: 0.5;">{readTime} čítania</span>
+  </div>
+  <h3 class="text-lg font-semibold mb-2">{title}</h3>
+  <p class="text-sm font-light" style="opacity: 0.7;">{perex}</p>
+  <p class="text-xs font-bold uppercase tracking-wider mt-4" style="color: var(--color-blue-deep);">
+    Čítať →
+  </p>
+</a>
