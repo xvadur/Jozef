@@ -1,6 +1,6 @@
 export const SITE = {
   title: "xvadur",
-  description: "Adam Rudavský — 10 rokov urgentná medicína, teraz budujem s AI. Tvorca openclaw agenta Jarvis a builder blogu.",
+  description: "Adam Rudavský (xvadur) – 10 rokov urgentná medicína, dnes AI. Zakladateľ AI Striko. Jožo AI operátor. AI Recepcia pre ambulancie.",
   defaultLanguage: "sk",
   url: "https://xvadur.com",
   author: "xvadur",
