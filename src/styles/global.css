@@ -64,3 +64,16 @@ body {
 .brutal-border { border: var(--border-brutal); }
 .brutal-shadow { box-shadow: var(--shadow-brutal); }
 .brutal-shadow-sm { box-shadow: var(--shadow-brutal-sm); }
+
+/* Brutalist block hover effect */
+.block-hover {
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.block-hover:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-sm);
+}
+.block-hover:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}

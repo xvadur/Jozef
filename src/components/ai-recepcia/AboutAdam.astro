@@ -1,56 +1,61 @@
 ---
+import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 import BrutalistButton from "../ui/BrutalistButton.astro";
 ---
 <section class="max-w-7xl mx-auto px-6 pb-12">
   <div class="grid gap-3 md:grid-cols-2">
-    <div class="p-10" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
-      <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Kto som</p>
-      <h2 class="text-3xl font-light mb-6">Kto som a prečo mi môžete veriť</h2>
-      <p class="text-base font-light mb-4" style="line-height: 1.8;">
-        Volám sa <strong>Adam Rudavský</strong> (xvadur).<br /><br />
-        <strong>Desať rokov</strong> som pracoval v zdravotníctve — nie z manuálu, ale priamo pri ľuďoch.
-        Na urgentnom príjme sa rýchlo naučíte, čo funguje a čo nie. Kedy stačí jedno slovo a kedy treba celý protokol.<br /><br />
-        Pred ôsmimi mesiacmi som sa začal venovať AI buildovaniu.
-        Tých 10 rokov skúseností šlo so mnou.
-      </p>
-      <ul class="space-y-2 mb-6">
-        {[
-          "10 rokov pri ľuďoch — nie v kancelárii",
-          "Viem z prvej ruky čo funguje a čo nie",
-          "AI builder od základov, nie z kurzu",
-        ].map(item => (
-          <li class="text-sm font-light flex gap-2">
-            <span style="color: var(--color-blue);">✓</span> {item}
-          </li>
-        ))}
-      </ul>
-      <blockquote class="border-l-4 pl-4 italic text-sm font-light" style="border-color: var(--color-blue); opacity: 0.8;">
-        "Nie som tech guy, ktorý čítal o zdravotníctve. Som zdravotník, ktorý sa naučil AI."
-      </blockquote>
-    </div>
-    <div class="p-10 flex flex-col justify-between" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Trust</p>
-        <div class="grid grid-cols-2 gap-3 mb-6">
+    <AnimatedBlock client:load delay={0}>
+      <div class="p-10 block-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+        <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Kto som</p>
+        <h2 class="text-3xl font-light mb-6">Kto som a prečo mi môžete veriť</h2>
+        <p class="text-base font-light mb-4" style="line-height: 1.8;">
+          Volám sa <strong>Adam Rudavský</strong> (xvadur).<br /><br />
+          <strong>Desať rokov</strong> som pracoval v zdravotníctve — nie z manuálu, ale priamo pri ľuďoch.
+          Na urgentnom príjme sa rýchlo naučíte, čo funguje a čo nie. Kedy stačí jedno slovo a kedy treba celý protokol.<br /><br />
+          Pred ôsmimi mesiacmi som sa začal venovať AI buildovaniu.
+          Tých 10 rokov skúseností šlo so mnou.
+        </p>
+        <ul class="space-y-2 mb-6">
           {[
-            "10 rokov healthcare",
-            "GDPR compliant",
-            "EU hosting",
-            "Slovenská firma",
-          ].map(badge => (
-            <div class="p-3 text-center text-xs font-bold uppercase tracking-wider" style="border: var(--border-brutal); background-color: var(--color-bg);">
-              ✓ {badge}
-            </div>
+            "10 rokov pri ľuďoch — nie v kancelárii",
+            "Viem z prvej ruky čo funguje a čo nie",
+            "AI builder od základov, nie z kurzu",
+          ].map(item => (
+            <li class="text-sm font-light flex gap-2">
+              <span style="color: var(--color-blue);">✓</span> {item}
+            </li>
           ))}
+        </ul>
+        <blockquote class="border-l-4 pl-4 italic text-sm font-light" style="border-color: var(--color-blue); opacity: 0.8;">
+          "Nie som tech guy, ktorý čítal o zdravotníctve. Som zdravotník, ktorý sa naučil AI."
+        </blockquote>
+      </div>
+    </AnimatedBlock>
+    <AnimatedBlock client:load delay={0.15}>
+      <div class="p-10 flex flex-col justify-between block-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Trust</p>
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            {[
+              "10 rokov healthcare",
+              "GDPR compliant",
+              "EU hosting",
+              "Slovenská firma",
+            ].map(badge => (
+              <div class="p-3 text-center text-xs font-bold uppercase tracking-wider" style="border: var(--border-brutal); background-color: var(--color-bg);">
+                ✓ {badge}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">Kontakt</p>
+          <p class="text-sm font-light mb-4">adam@xvadur.com</p>
+          <BrutalistButton href="https://cal.com/xvadur" variant="pink" size="md" target="_blank">
+            Rezervovať Demo →
+          </BrutalistButton>
         </div>
       </div>
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">Kontakt</p>
-        <p class="text-sm font-light mb-4">adam@xvadur.com</p>
-        <BrutalistButton href="https://cal.com/xvadur" variant="pink" size="md" target="_blank">
-          Rezervovať Demo →
-        </BrutalistButton>
-      </div>
-    </div>
+    </AnimatedBlock>
   </div>
 </section>

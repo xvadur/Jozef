@@ -1,4 +1,6 @@
 ---
+import AnimatedBlock from "../ui/AnimatedBlock.tsx";
+
 const steps = [
   { num: "01", title: "Setup (1–2 dni)", desc: "Napojíme AI na telefón a kalendár, prejdeme vaše pravidlá." },
   { num: "02", title: "Testovanie", desc: "Otestujeme typické scenáre a doladíme flow." },
@@ -7,16 +9,20 @@ const steps = [
 ---
 <section class="max-w-7xl mx-auto px-6 pb-12">
   <div class="grid gap-3 md:grid-cols-3">
-    <div class="md:col-span-3 p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
-      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Proces</p>
-      <h2 class="text-2xl font-light">Ako to funguje?</h2>
-    </div>
-    {steps.map(step => (
-      <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
-        <p class="text-5xl font-bold mb-4" style="color: var(--color-blue); opacity: 0.3;">{step.num}</p>
-        <h3 class="text-lg font-semibold mb-2">{step.title}</h3>
-        <p class="text-sm font-light" style="opacity: 0.7;">{step.desc}</p>
+    <AnimatedBlock client:load delay={0} className="md:col-span-3">
+      <div class="p-6 block-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+        <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Proces</p>
+        <h2 class="text-2xl font-light">Ako to funguje?</h2>
       </div>
+    </AnimatedBlock>
+    {steps.map((step, i) => (
+      <AnimatedBlock client:load delay={0.1 + i * 0.1}>
+        <div class="p-8 block-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+          <p class="text-5xl font-bold mb-4" style="color: var(--color-blue); opacity: 0.3;">{step.num}</p>
+          <h3 class="text-lg font-semibold mb-2">{step.title}</h3>
+          <p class="text-sm font-light" style="opacity: 0.7;">{step.desc}</p>
+        </div>
+      </AnimatedBlock>
     ))}
   </div>
 </section>

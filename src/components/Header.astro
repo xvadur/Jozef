@@ -8,6 +8,13 @@ const navLinks = [
   { href: "/ai-recepcia", label: "AI Recepcia" },
   { href: "/blog", label: "Blog" },
 ];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath.startsWith(href);
+}
 ---
 
 <header
@@ -47,8 +54,8 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="text-sm font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors"
-            style="color: var(--color-text);"
+            class={`nav-link text-sm font-medium uppercase tracking-wider transition-colors ${isActive(link.href) ? 'nav-active' : ''}`}
+            aria-current={isActive(link.href) ? 'page' : undefined}
           >
             {link.label}
           </a>
@@ -74,8 +81,9 @@ const navLinks = [
         <li>
           <a
             href={link.href}
-            class="block text-sm font-medium uppercase tracking-wider hover:text-[#4FC3F7] transition-colors"
+            class={`block nav-link text-sm font-medium uppercase tracking-wider transition-colors ${isActive(link.href) ? 'nav-active' : ''}`}
             role="menuitem"
+            aria-current={isActive(link.href) ? 'page' : undefined}
           >
             {link.label}
           </a>
@@ -89,6 +97,29 @@ const navLinks = [
     </ul>
   </div>
 </header>
+
+<style>
+  .nav-link {
+    color: var(--color-text);
+    position: relative;
+    padding-bottom: 3px;
+  }
+  .nav-link:hover {
+    color: var(--color-blue);
+  }
+  .nav-active {
+    color: var(--color-blue) !important;
+  }
+  .nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-blue);
+  }
+</style>
 
 <script>
   const menuButton = document.getElementById("mobile-menu-button");

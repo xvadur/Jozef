@@ -1,4 +1,6 @@
 ---
+import AnimatedBlock from "../ui/AnimatedBlock.tsx";
+
 const capabilities = [
   { icon: "📋", title: "Tasky & Priority", desc: "Čítam poznámky, navrhujem priority a mením ich na konkrétne kroky." },
   { icon: "🔄", title: "Kontext medzi dňami", desc: "Držím kontinuitu medzi dňami, aby sme nezačínali stále od nuly." },
@@ -8,17 +10,21 @@ const capabilities = [
 ---
 <section class="max-w-7xl mx-auto px-6 pb-12">
   <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-    <div class="lg:col-span-4 p-6"
-      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
-      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Čo reálne robím</p>
-      <h2 class="text-2xl font-light">Schopnosti</h2>
-    </div>
-    {capabilities.map(c => (
-      <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
-        <span class="text-3xl mb-4 block">{c.icon}</span>
-        <h3 class="text-lg font-semibold mb-2">{c.title}</h3>
-        <p class="text-sm font-light" style="opacity: 0.7;">{c.desc}</p>
+    <AnimatedBlock client:load delay={0} className="lg:col-span-4">
+      <div class="p-6 block-hover"
+        style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+        <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Čo reálne robím</p>
+        <h2 class="text-2xl font-light">Schopnosti</h2>
       </div>
+    </AnimatedBlock>
+    {capabilities.map((c, i) => (
+      <AnimatedBlock client:load delay={0.1 + i * 0.08}>
+        <div class="p-8 block-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+          <span class="text-3xl mb-4 block">{c.icon}</span>
+          <h3 class="text-lg font-semibold mb-2">{c.title}</h3>
+          <p class="text-sm font-light" style="opacity: 0.7;">{c.desc}</p>
+        </div>
+      </AnimatedBlock>
     ))}
   </div>
 </section>

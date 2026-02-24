@@ -1,4 +1,7 @@
 ---
+import AnimatedBlock from "../ui/AnimatedBlock.tsx";
+import BrutalistButton from "../ui/BrutalistButton.astro";
+
 const tiers = [
   {
     name: "STARTER",
@@ -26,53 +29,58 @@ const tiers = [
     highlight: false,
   },
 ];
-import BrutalistButton from "../ui/BrutalistButton.astro";
 ---
 
 <section class="max-w-7xl mx-auto px-6 pb-12">
-  <div
-    class="p-8 mb-3"
-    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
-  >
-    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Pricing</p>
-    <h2 class="text-3xl font-light">Transparentný pricing</h2>
-    <p class="text-sm font-light mt-1" style="opacity: 0.6;">Žiadne skryté poplatky. Bez dlhých viazaností.</p>
-  </div>
+  <AnimatedBlock client:load delay={0}>
+    <div
+      class="p-8 mb-3 block-hover"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
+    >
+      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Pricing</p>
+      <h2 class="text-3xl font-light">Transparentný pricing</h2>
+      <p class="text-sm font-light mt-1" style="opacity: 0.6;">Žiadne skryté poplatky. Bez dlhých viazaností.</p>
+    </div>
+  </AnimatedBlock>
 
   <div class="grid gap-3 md:grid-cols-3">
-    {tiers.map(tier => (
-      <div
-        class="p-8 flex flex-col justify-between"
-        style={`border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: ${tier.highlight ? 'var(--color-blue)' : 'var(--color-bg)'};`}
-      >
-        <div>
-          {tier.badge && (
-            <p class="text-xs font-bold uppercase tracking-widest mb-2" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>
-              {tier.badge}
-            </p>
-          )}
-          <h3 class="text-2xl font-bold mb-1" style={tier.highlight ? 'color: white;' : ''}>{tier.name}</h3>
-          <p class="text-3xl font-light mb-1" style={tier.highlight ? 'color: white;' : 'color: var(--color-blue-deep);'}>{tier.monthly}</p>
-          <p class="text-xs mb-4" style={tier.highlight ? 'color: white; opacity: 0.7;' : 'opacity: 0.5;'}>Setup: {tier.setup} jednorazovo</p>
-          <p class="text-xs font-bold uppercase tracking-wider mb-4" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>{tier.forWho}</p>
-          <ul class="space-y-1">
-            {tier.features.map(f => (
-              <li class="text-sm font-light flex gap-2" style={tier.highlight ? 'color: white;' : ''}>
-                <span>✓</span>{f}
-              </li>
-            ))}
-          </ul>
+    {tiers.map((tier, i) => (
+      <AnimatedBlock client:load delay={0.1 + i * 0.1}>
+        <div
+          class="p-8 flex flex-col justify-between block-hover"
+          style={`border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: ${tier.highlight ? 'var(--color-blue)' : 'var(--color-bg)'};`}
+        >
+          <div>
+            {tier.badge && (
+              <p class="text-xs font-bold uppercase tracking-widest mb-2" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>
+                {tier.badge}
+              </p>
+            )}
+            <h3 class="text-2xl font-bold mb-1" style={tier.highlight ? 'color: white;' : ''}>{tier.name}</h3>
+            <p class="text-3xl font-light mb-1" style={tier.highlight ? 'color: white;' : 'color: var(--color-blue-deep);'}>{tier.monthly}</p>
+            <p class="text-xs mb-4" style={tier.highlight ? 'color: white; opacity: 0.7;' : 'opacity: 0.5;'}>Setup: {tier.setup} jednorazovo</p>
+            <p class="text-xs font-bold uppercase tracking-wider mb-4" style={tier.highlight ? 'color: white; opacity: 0.8;' : 'color: var(--color-blue-deep);'}>{tier.forWho}</p>
+            <ul class="space-y-1">
+              {tier.features.map(f => (
+                <li class="text-sm font-light flex gap-2" style={tier.highlight ? 'color: white;' : ''}>
+                  <span>✓</span>{f}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-6">
+            <BrutalistButton href="https://cal.com/xvadur" variant={tier.highlight ? 'white' : 'black'} size="sm" target="_blank" class="w-full justify-center">
+              Chcem demo →
+            </BrutalistButton>
+          </div>
         </div>
-        <div class="mt-6">
-          <BrutalistButton href="https://cal.com/xvadur" variant={tier.highlight ? 'white' : 'black'} size="sm" target="_blank" class="w-full justify-center">
-            Chcem demo →
-          </BrutalistButton>
-        </div>
-      </div>
+      </AnimatedBlock>
     ))}
   </div>
 
-  <div class="mt-3 p-4 text-center" style="border: var(--border-brutal); background-color: var(--color-bg);">
-    <p class="text-sm font-semibold">Typicky je to 1–2% obratu. Očakávaná návratnosť býva v násobkoch ceny.</p>
-  </div>
+  <AnimatedBlock client:load delay={0.4}>
+    <div class="mt-3 p-4 text-center" style="border: var(--border-brutal); background-color: var(--color-bg);">
+      <p class="text-sm font-semibold">Typicky je to 1–2% obratu. Očakávaná návratnosť býva v násobkoch ceny.</p>
+    </div>
+  </AnimatedBlock>
 </section>
