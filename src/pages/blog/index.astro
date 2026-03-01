@@ -4,17 +4,9 @@ import Header from "../../components/Header.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE } from "../../config/site.mjs";
+import { blogPosts } from "../../config/blogPosts";
 
-// Placeholder posts – replace with Astro content collections later
-const posts = [
-  {
-    title: "Čoskoro – Jožov denník sa otvára",
-    date: "2026-02-23",
-    perex: "Tu budú zápisky zo zákulisia budovania AI Striko. Nič sa nebude tajiť.",
-    slug: "coming-soon",
-    readTime: "1 min",
-  },
-];
+const posts = blogPosts;
 ---
 
 <Layout

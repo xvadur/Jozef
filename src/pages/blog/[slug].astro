@@ -2,24 +2,56 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import { blogPosts } from "../../config/blogPosts";
 
 const { slug } = Astro.params;
+const post = blogPosts.find((p) => p.slug === slug);
 
 export async function getStaticPaths() {
-  return [{ params: { slug: "coming-soon" } }];
+  return blogPosts.map((p) => ({ params: { slug: p.slug } }));
 }
 ---
 
-<Layout title="Čoskoro | xvadur blog">
+<Layout title={`${post?.title ?? "Článok"} | xvadur blog`}>
   <Header />
-  <main id="main-content" role="main" class="max-w-2xl mx-auto px-6 py-16">
+  <main id="main-content" role="main" class="max-w-3xl mx-auto px-6 py-16">
     <a href="/blog" class="text-xs font-bold uppercase tracking-wider hover:underline mb-8 block" style="color: var(--color-blue-deep);">
       ← Späť na blog
     </a>
-    <h1 class="text-4xl font-light mb-6">Čoskoro</h1>
-    <p class="text-lg font-light" style="opacity: 0.7;">
-      Jožov denník sa práve otvára. Prvý zápisom čoskoro.
-    </p>
+
+    {
+      !post ? (
+        <>
+          <h1 class="text-4xl font-light mb-6">Článok nebol nájdený</h1>
+          <p class="text-lg font-light" style="opacity: 0.7;">Skús sa vrátiť na zoznam článkov.</p>
+        </>
+      ) : (
+        <article>
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">
+            Builder Blog
+          </p>
+          <h1 class="text-4xl font-light mb-3">{post.title}</h1>
+          <p class="text-sm mb-6" style="opacity: 0.6;">{post.date} · {post.readTime}</p>
+          <p class="text-lg font-light mb-8" style="opacity: 0.8;">{post.perex}</p>
+
+          {
+            post.audioUrl && (
+              <section class="mb-10" style="border: var(--border-brutal); padding: 1rem; background: #fff;">
+                <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">Podcast verzia</p>
+                <audio controls preload="metadata" style="width: 100%;">
+                  <source src={post.audioUrl} type="audio/mpeg" />
+                  Tvoj prehliadač nepodporuje audio prehrávač.
+                </audio>
+              </section>
+            )
+          }
+
+          <div class="space-y-5 text-lg leading-relaxed" style="opacity: 0.9;">
+            {post.content.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+        </article>
+      )
+    }
   </main>
   <Footer />
 </Layout>
