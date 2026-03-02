@@ -10,20 +10,22 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    title: "AI už nie je chatbot: 1 deň, 2 agenti, 0 výhovoriek",
+    title: "AI agent v praxi: ako som za 1 deň nasadil voice flow pre zubára aj realiťáka",
     date: "2026-03-02",
     perex:
-      "Dnes sa potvrdilo, že agentický workflow funguje v teréne. Mobil, hlasovky, Telegram a reálne nasadenie agentov pre zubára aj realiťáka.",
+      "Reálna prípadová štúdia z terénu: Telegram hlasovky, OpenClaw orchestrace, ElevenLabs voice agent a Google Calendar booking. Bez teórie, len workflow, ktorý funguje.",
     slug: "ai-uz-nie-je-chatbot-1-den-2-agenti-0-vyhovoriek",
-    readTime: "6 min",
+    readTime: "8 min",
     audioUrl: "/audio/ai-uz-nie-je-chatbot-1-den-2-agenti.mp3",
     content: [
-      "Dnes bol deň, keď sa mi definitívne prepol mindset. AI už pre mňa nie je chatbot. Je to operátor, ktorý vie vykonávať úlohy medzi mojimi hlasovkami.",
-      "Proof of concept prebehol vonku, cez telefón. Posielal som zadania cez Telegram, agent robil patche, upravoval prompty, mapoval payloady a spúšťal test cally. Ja som robil kontrolu výsledku.",
-      "Postavili sme dva použiteľné flowy: zubársku recepciu a realitný intake. Obe verzie boli napojené na kalendár a pripravené na reálne testovanie.",
-      "Kľúčový rozdiel bol skill layer. Keď je workflow zabalený do znovupoužiteľného skillu, iterácie sú stabilné, rýchle a bez chaosu.",
-      "Zajtra ide finál discovery so zubárom. Cieľ je jasný: potvrdiť offer fit a rozbehnúť prvú case study, od ktorej sa dá škálovať predaj.",
-      "CTA: Nerieš donekonečna modely. Definuj výsledok do 24 hodín, postav workflow, otestuj ho v realite a iteruj.",
+      "Ak hľadáš, ako nasadiť AI voice agenta do malého biznisu, toto je môj report z jedného dňa v ostrej prevádzke. Cieľ nebol " +
+        "spraviť pekné demo. Cieľ bol postaviť workflow, ktorý vie obsluhovať reálne hovory a booking.",
+      "Najväčší zlom bol v tom, že som nepracoval klasicky za notebookom. Zadania som posielal cez Telegram hlasovky, agent robil úpravy promptov, mapoval tool payloady, spúšťal testy a ja som robil len validáciu výsledku.",
+      "V ten istý deň sme nasadili dva funkčné use case flowy: AI recepcia pre zubnú ambulanciu a AI intake pre realitného makléra. Obe vetvy mali napojenie na kalendár a zvládli základný booking proces.",
+      "Technicky najviac pomohla skill vrstva. Keď má agent jasný postup, iterácie sú konzistentné: zadanie -> patch -> test call -> korekcia. Toto je obrovský rozdiel oproti ručnému klikaniu každého parametra.",
+      "Čo z toho vyplýva pre podnikateľa? AI chatbot je fajn na odpovede, ale AI agent je o exekúcii. Ak definuješ jasný outcome, agent vie medzi tvojimi vstupmi urobiť prácu, ktorú by si inak riešil hodiny alebo dni.",
+      "Ďalší krok je finál discovery so zubárom a potvrdenie offer fitu. Ak sa to potvrdí, vzniká prvá case study pre predaj AI recepcie v zdravotníctve.",
+      "Moja výzva na záver: nestrácaj čas nekonečným porovnávaním modelov. Zadefinuj výsledok do 24 hodín, postav jednoduchý workflow, otestuj ho v realite a iteruj.",
     ],
   },
   {
