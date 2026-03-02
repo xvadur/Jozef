@@ -13,15 +13,16 @@ export const blogPosts: BlogPost[] = [
     title: "Rubicon Day: 1 deň, 2 agenti, 0 výhovoriek",
     date: "2026-03-02",
     perex:
-      "Dnešný builder log: z Telegramu sme orchestravali ElevenLabs + n8n stack, fixli payloady a dotiahli flowy pre zubára aj makléra do demo-ready stavu.",
+      "Dnešný log je o reálnom shipovaní: publikácia na webe, CI/CD fix, podcast routing a iterácia obsahu tak, aby výstup nebol len pekný, ale použiteľný.",
     slug: "rubicon-day-2-agenti-0-vyhovoriek",
-    readTime: "5 min",
-    audioUrl: "/audio/ai-uz-nie-je-chatbot-1-den-2-agenti.mp3",
+    readTime: "6 min",
+    audioUrl: "/audio/rubicon-day-2026-03-02.mp3",
     content: [
-      "Dnes sa to prelomilo. Už to nebolo chatovanie s AI, ale živá orchestrace celého stacku medzi hlasovým agentom, n8n automáciami a kalendárom.",
-      "Najväčší posun bol, že iterácie bežali v teréne cez Telegram. Zadanie -> patch -> test call -> korekcia. Bez čakania, bez dlhého setupu.",
-      "Nasadili sme dve vetvy: zubársky booking flow a maklérsky intake flow. Obe vetvy prešli reálnymi testami a majú pripravený ďalší krok pre predajný pilot.",
-      "Core lesson: najprv robustný flow, až potom polish. Keď je kostra stabilná, všetko ostatné je už len systematická optimalizácia.",
+      "Dnes to nebolo o veľkých slovách. Bolo to o tom, či vieme dotiahnuť výstup až na produkciu bez výhovoriek.",
+      "Post sme publikovali, build pipeline sme opravili a následne sme riešili poslednú míľu: prečo podcast audio route vracia fallback HTML namiesto MP3.",
+      "Po fixe sme to validovali technicky, nie pocitovo: správny content type audio/mpeg, funkčné prehrávanie v článku a konzistentný asset path.",
+      "Najväčšia lekcia dňa je jednoduchá: publish bez validácie je náhoda. Validácia bez publishu je len simulácia progresu.",
+      "Odteraz chceme každý deň držať rovnaký rytmus: krátky log, jasný point, audio verzia a jedno konkrétne ponaučenie pre builderov.",
     ],
   },
   {
