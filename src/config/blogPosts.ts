@@ -10,6 +10,21 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Rubicon Day: 1 deň, 2 agenti, 0 výhovoriek",
+    date: "2026-03-02",
+    perex:
+      "Dnešný builder log: z Telegramu sme orchestravali ElevenLabs + n8n stack, fixli payloady a dotiahli flowy pre zubára aj makléra do demo-ready stavu.",
+    slug: "rubicon-day-2-agenti-0-vyhovoriek",
+    readTime: "5 min",
+    audioUrl: "/audio/ai-uz-nie-je-chatbot-1-den-2-agenti.mp3",
+    content: [
+      "Dnes sa to prelomilo. Už to nebolo chatovanie s AI, ale živá orchestrace celého stacku medzi hlasovým agentom, n8n automáciami a kalendárom.",
+      "Najväčší posun bol, že iterácie bežali v teréne cez Telegram. Zadanie -> patch -> test call -> korekcia. Bez čakania, bez dlhého setupu.",
+      "Nasadili sme dve vetvy: zubársky booking flow a maklérsky intake flow. Obe vetvy prešli reálnymi testami a majú pripravený ďalší krok pre predajný pilot.",
+      "Core lesson: najprv robustný flow, až potom polish. Keď je kostra stabilná, všetko ostatné je už len systematická optimalizácia.",
+    ],
+  },
+  {
     title: "AI agent v praxi: ako som za 1 deň nasadil voice flow pre zubára aj realiťáka",
     date: "2026-03-02",
     perex:
