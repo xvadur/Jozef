@@ -15,14 +15,14 @@ const faqs = [
     <p class="text-xs font-bold uppercase tracking-widest mb-3 text-white opacity-80">Demo</p>
     <h2 class="text-4xl font-light text-white mb-3">Prestať strácať pacientov.<br />Začať dnes.</h2>
     <p class="text-white font-light mb-6" style="opacity: 0.85;">
-      Demo trvá 15 minút. Ukážeme vám, ako by to fungovalo vo vašej prevádzke.
+      Demo trvá 15 minút. Ukážeme flow na vašom type prevádzky + konkrétny next step pilotu.
     </p>
     <div class="flex gap-3 justify-center flex-wrap">
-      <BrutalistButton href="mailto:adam@xvadur.com" variant="white" size="lg">
-        Chcem demo (zadarmo)
+      <BrutalistButton href="https://cal.com/xvadur" variant="white" size="lg" target="_blank">
+        Rezervovať 15-min demo
       </BrutalistButton>
-      <BrutalistButton href="https://cal.com/xvadur" variant="black" size="lg" target="_blank">
-        Zavolať / Napísať →
+      <BrutalistButton href="mailto:adam@xvadur.com" variant="black" size="lg">
+        Napísať e-mail →
       </BrutalistButton>
     </div>
     <p class="text-white text-sm mt-6" style="opacity: 0.7;">
@@ -39,7 +39,7 @@ const faqs = [
     {faqs.map(faq => (
       <div class="p-6 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
         <h3 class="text-sm font-bold mb-2">{faq.q}</h3>
-        <p class="text-sm font-light" style="opacity: 0.7;">{faq.a}</p>
+        <p class="text-sm font-light" style="opacity: 0.78;">{faq.a}</p>
       </div>
     ))}
   </div>
