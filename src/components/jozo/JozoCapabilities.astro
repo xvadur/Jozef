@@ -28,10 +28,10 @@ const track = [...integrations, ...integrations];
   <div class="integration-marquee mt-4" aria-label="Aktívne integrácie">
     <div class="integration-track">
       {track.map((item, i) => (
-        <div class="integration-chip" aria-hidden={i >= integrations.length ? "true" : "false"}>
+        <article class="integration-card" aria-hidden={i >= integrations.length ? "true" : "false"}>
           <img class="integration-icon" src={item.iconUrl} alt={`${item.name} logo`} loading="lazy" decoding="async" />
           <span class="integration-name">{item.name}</span>
-        </div>
+        </article>
       ))}
     </div>
   </div>
@@ -60,32 +60,44 @@ const track = [...integrations, ...integrations];
 
   .integration-marquee:hover .integration-track { animation-play-state: paused; }
 
-  .integration-chip {
-    display: inline-flex;
+  .integration-card {
+    width: min(72vw, 220px);
+    min-height: 78px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.52rem 0.85rem;
-    border: 2px solid var(--color-black);
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 0.65rem 0.75rem;
+    border: var(--border-brutal);
     box-shadow: var(--shadow-brutal-sm);
     background: #fff;
     flex: 0 0 auto;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .integration-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-brutal);
   }
 
   .integration-icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
     border-radius: 3px;
     flex: 0 0 auto;
   }
 
   .integration-name {
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.055em;
+    letter-spacing: 0.06em;
     font-weight: 700;
     color: var(--color-text);
     white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
   }
 
   @keyframes integrationsScroll {
@@ -95,7 +107,8 @@ const track = [...integrations, ...integrations];
 
   @media (max-width: 768px) {
     .integration-track { animation-duration: 28s; }
-    .integration-name { font-size: 0.72rem; }
+    .integration-card { width: min(74vw, 190px); min-height: 72px; }
+    .integration-name { font-size: 0.68rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
