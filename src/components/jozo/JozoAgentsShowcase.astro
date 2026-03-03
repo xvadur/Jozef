@@ -1,0 +1,120 @@
+---
+const agents = [
+  { lane: "#command-center", agent: "agent_orchestrator", role: "Priority lock, routing, escalation a kontrola flowu." },
+  { lane: "#sales-outreach", agent: "agent_sales_outreach", role: "Outbound pipeline, follow-upy a next-step orchestrace." },
+  { lane: "#client-delivery", agent: "agent_client_delivery", role: "Milestones, QA slučky a go-live readiness." },
+  { lane: "#ai-recepcia", agent: "agent_ai_recepcia", role: "Proof capture, metriky a evidencia výsledkov." },
+  { lane: "#content-media", agent: "agent_content_media", role: "Evidence-based obsah, repurposing a queueing." },
+  { lane: "#system-devops", agent: "agent_system_devops", role: "Runtime diagnostika, mitigácie a rollback readiness." },
+  { lane: "#finance-ops", agent: "agent_finance_ops", role: "Runway tracking, spend kontrola a risk flags." },
+  { lane: "#research-intel", agent: "agent_research_intel", role: "Offer positioning, objections a decision briefy." },
+];
+
+const track = [...agents, ...agents];
+---
+
+<section id="singularity-lanes" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 160ms;">
+  <div class="p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Singularity Operating Model</p>
+    <h2 class="text-2xl font-light tracking-tight">Agent showcase podľa live lane systému</h2>
+    <p class="text-sm mt-2" style="opacity:0.72;">Hover kartu = detail role agenta. Pás sa pri hover zastaví.</p>
+  </div>
+
+  <div class="agent-marquee mt-4">
+    <div class="agent-track">
+      {track.map((a, i) => (
+        <article class="agent-card" aria-hidden={i >= agents.length ? "true" : "false"}>
+          <p class="agent-lane">{a.lane}</p>
+          <p class="agent-name">{a.agent}</p>
+          <p class="agent-role">{a.role}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <div class="grid gap-3 md:grid-cols-3 mt-4">
+    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Guardrail</p>
+      <p class="text-sm mt-1">Žiadny outbound send bez approval.</p>
+    </div>
+    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Safety</p>
+      <p class="text-sm mt-1">Žiadne deštruktívne production zmeny bez approval.</p>
+    </div>
+    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Escalation</p>
+      <p class="text-sm mt-1">Blocker nad 30 min ide do #command-center.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .agent-marquee {
+    width: 100%;
+    overflow: hidden;
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal);
+    background: var(--color-bg);
+    padding: 0.9rem 0;
+  }
+
+  .agent-track {
+    display: flex;
+    gap: 0.75rem;
+    width: max-content;
+    padding: 0 1rem;
+    animation: agentScroll 38s linear infinite;
+  }
+
+  .agent-marquee:hover .agent-track { animation-play-state: paused; }
+
+  .agent-card {
+    width: min(76vw, 290px);
+    min-height: 132px;
+    padding: 0.9rem;
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal-sm);
+    background: #fff;
+    flex: 0 0 auto;
+    transition: transform 160ms ease;
+  }
+
+  .agent-card:hover { transform: translateY(-2px); }
+
+  .agent-lane {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue-deep);
+    font-weight: 700;
+  }
+
+  .agent-name {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .agent-role {
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    opacity: 0.78;
+  }
+
+  @keyframes agentScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 0.375rem)); }
+  }
+
+  @media (max-width: 768px) {
+    .agent-track { animation-duration: 30s; }
+    .agent-card { width: min(84vw, 270px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .agent-track { animation: none; }
+    .agent-marquee { overflow-x: auto; }
+  }
+</style>
