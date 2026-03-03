@@ -11,8 +11,8 @@ import Footer from "../components/Footer.astro";
 import { SITE } from "../config/site.mjs";
 ---
 <Layout
-  title={`Jožo – AI Operátor | ${SITE.title}`}
-  description="Jožo je AI operátor postavený na OpenClaw. Rieši tasky, workflowy a operatívu. Nie chatbot na parádu."
+  title="Jožo | AI operátor pre exekúciu a workflowy"
+  description="Jožo je AI operátor postavený na OpenClaw: tasky, operatíva, workflowy a reporting. Praktická exekúcia namiesto chatbota na efekt."
 >
   <Header />
   <main id="main-content" role="main">
@@ -24,4 +24,34 @@ import { SITE } from "../config/site.mjs";
     <JozoComingSoon />
   </main>
   <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Jožo – AI operátor',
+    url: `${SITE.url}/jozo`,
+    description: 'Jožo je AI operátor postavený na OpenClaw: tasky, operatíva, workflowy a reporting.'
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Čo Jožo robí autonómne?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Bežné tasky, poznámky, workflowy a reporting.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Kedy treba potvrdenie od človeka?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Pri citlivých akciách, externej komunikácii a platbách.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Nahrádza Jožo medicínske rozhodovanie?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Nie. Medicínske rozhodnutia zostávajú výlučne na lekárovi.' }
+      }
+    ]
+  })} />
 </Layout>
