@@ -31,4 +31,35 @@ import { SITE } from "../config/site.mjs";
       email: 'adam@xvadur.com'
     }]
   })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Koľko trvá pilot?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Typicky 7–14 dní od úvodného callu po prvé ostré testy.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Musím meniť celý systém?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Nie. Začíname pilotom nad tým, čo už používate, a napájame to postupne.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Pre koho je to vhodné?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Pre ambulancie a služby, kde hovory a objednávky preťažujú personál.'
+        }
+      }
+    ]
+  })} />
 </Layout>
