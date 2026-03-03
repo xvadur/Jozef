@@ -1,57 +1,57 @@
 ---
 const integrations = [
   {
-    icon: "🧠",
+    iconUrl: "https://cdn.simpleicons.org/openai/412991",
     name: "OpenClaw",
     detail: "Core runtime orchestrace, pamäť a tool routing.",
   },
   {
-    icon: "📅",
+    iconUrl: "https://cdn.simpleicons.org/googlecalendar/4285F4",
     name: "Google Calendar",
     detail: "Čítanie/plánovanie udalostí a booking logika.",
   },
   {
-    icon: "✉️",
+    iconUrl: "https://cdn.simpleicons.org/gmail/EA4335",
     name: "Gmail",
     detail: "Inbox workflowy, drafty a odpovede.",
   },
   {
-    icon: "📈",
+    iconUrl: "https://cdn.simpleicons.org/linear/5E6AD2",
     name: "Linear",
     detail: "Issue tracking, delivery checkpointy a execution flow.",
   },
   {
-    icon: "🗂️",
+    iconUrl: "https://cdn.simpleicons.org/airtable/18BFFF",
     name: "Airtable",
     detail: "CRM-like tabuľky a bezpečné upserty cez API.",
   },
   {
-    icon: "☁️",
+    iconUrl: "https://cdn.simpleicons.org/cloudflare/F38020",
     name: "Cloudflare",
     detail: "DNS, SSL, zones a infra nastavenia.",
   },
   {
-    icon: "🐙",
+    iconUrl: "https://cdn.simpleicons.org/github/181717",
     name: "GitHub",
     detail: "Repo zmeny, commity, push a release workflow.",
   },
   {
-    icon: "🔄",
+    iconUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
     name: "n8n",
     detail: "Automatizácie, workflow runy a exekúcia triggerov.",
   },
   {
-    icon: "🧮",
+    iconUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
     name: "Supabase",
     detail: "DB operácie, SQL, vektory a storage.",
   },
   {
-    icon: "🔎",
+    iconUrl: "https://cdn.simpleicons.org/brave/FB542B",
     name: "Brave Search",
     detail: "Realtime web research a content extraction.",
   },
   {
-    icon: "💬",
+    iconUrl: "https://cdn.simpleicons.org/telegram/26A5E4",
     name: "Telegram",
     detail: "Skupiny, topicy, notifikácie a command loop.",
   },
@@ -76,7 +76,7 @@ const track = [...integrations, ...integrations];
     <div class="integration-track">
       {track.map((item, i) => (
         <div class="integration-chip" aria-hidden={i >= integrations.length ? "true" : "false"}>
-          <span class="integration-icon" aria-hidden="true">{item.icon}</span>
+          <img class="integration-icon" src={item.iconUrl} alt={`${item.name} logo`} loading="lazy" decoding="async" />
           <span class="integration-name">{item.name}</span>
           <div class="integration-detail">{item.detail}</div>
         </div>
@@ -129,8 +129,11 @@ const track = [...integrations, ...integrations];
   }
 
   .integration-icon {
-    font-size: 0.95rem;
-    line-height: 1;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    border-radius: 3px;
+    flex: 0 0 auto;
   }
 
   .integration-name {
