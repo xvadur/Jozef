@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4FC3F7,100:FF3EA5&height=160&section=header&text=xvadur&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Striko%20%C2%B7%20Landing%20Page&descAlignY=58" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:f97316,100:ef4444&height=160&section=header&text=jozef.xvadur&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=jozef.xvadur%20%C2%B7%20Landing%20Page&descAlignY=58" />
 </p>
 
 <p align="center">
@@ -10,15 +10,13 @@
 </p>
 
 <p align="center">
-  <img src="https://media1.tenor.com/m/sAH7fvnqRNQAAAAd/gojo-satoru-gojo.gif" width="760" alt="gojo – you can't touch this" />
+  <img src="https://media.tenor.com/KHFiSxhUNpgAAAAd/rock-lee-anime.gif" width="760" alt="Rock Lee drops his training weights (Chunin Exams)" />
 </p>
 
-# xvadur · AI Striko
+# jozef.xvadur
 
-Toto je **xvadur.com** – landing page Adama Rudavského.
-10 rokov urgentná medicína. Dnes AI.
-
-Nie je to len stránka. Je to konverzný stroj pre **AI Recepciu** a portál pre **Jožo** – AI operátor postavený na OpenClaw.
+Toto je **jozef.xvadur** webový projekt.
+Landing page pre Joža a jeho služby.
 
 Brutalist-asymmetric grid. Space Grotesk. ION BLUE. Žiadny bullshit.
 
@@ -26,9 +24,9 @@ Brutalist-asymmetric grid. Space Grotesk. ION BLUE. Žiadny bullshit.
 
 | Route | Popis |
 |-------|-------|
-| `/` | Homepage – asymetrický hero grid, AI Striko intro, Book a Call |
-| `/jozo` | Jožo identity – kto je Jožo, schopnosti, Operational Truth, disclaimer |
-| `/ai-recepcia` | Conversion page pre kliniky – problem → pricing → ROI → demo |
+| `/` | Homepage – asymetrický hero grid, intro, Book a Call |
+| `/jozo` | Jožo identity – kto je Jožo, schopnosti, limits, disclaimer |
+| `/ai-recepcia` | Service page – ponuka, pricing, ROI, demo |
 | `/blog` | Jožov denník – builder blog |
 
 ## Tech Stack
@@ -36,23 +34,9 @@ Brutalist-asymmetric grid. Space Grotesk. ION BLUE. Žiadny bullshit.
 - **Astro 5** – multi-page, static output
 - **React 19** – islands pre interaktívne komponenty
 - **Tailwind v4** – utility CSS
-- **Framer Motion 12** – scroll-reveal animácie so stagger delays
+- **Framer Motion 12** – scroll-reveal animácie
 - **Space Grotesk** – font (Google Fonts)
 - **Tabler Icons** – cez astro-icon
-
-## Design System
-
-```
---color-bg:         #F7F8FA   (off-white pozadie)
---color-silver:     #DDE3EA   (DRIFT SILVER – karty)
---color-blue:       #4FC3F7   (ION BLUE – primary accent)
---color-pink:       #FF3EA5   (CTA – sparingly)
---color-text:       #1A1A2E   (dark navy text)
---shadow-brutal:    4px 4px 0px #1A1A2E
---border-brutal:    2px solid #1A1A2E
-```
-
-Brutalist hover: shadow sa zmenší na `2px 2px` + `translateY(2px)`.
 
 ## Quickstart
 
@@ -68,48 +52,27 @@ npm run dev
 ## Build & Deploy
 
 ```bash
-npm run build    # statický output do dist/
-npm run preview  # preview prod buildu
+npm run build
+npm run preview
 ```
 
-Deploy: pripojiť repo na **Vercel** alebo **Netlify** → auto-deploy na každý `git push main`.
+Deploy: Vercel alebo Netlify (auto-deploy po `push` na `main`).
 
 ## Štruktúra
 
-```
+```text
 src/
 ├── pages/
-│   ├── index.astro          # Homepage
-│   ├── jozo.astro           # Jožo agent identity
-│   ├── ai-recepcia.astro    # Conversion page pre kliniky
+│   ├── index.astro
+│   ├── jozo.astro
+│   ├── ai-recepcia.astro
 │   └── blog/
 │       ├── index.astro
 │       └── [slug].astro
 ├── components/
-│   ├── ui/                  # BrutalistButton, AnimatedBlock
-│   ├── home/                # HeroGrid
-│   ├── jozo/                # JozoHero, Capabilities, Limits, Teaser
-│   ├── ai-recepcia/         # 9 komponentov – full conversion funnel
-│   └── blog/                # PostCard
 ├── layouts/
-│   └── Layout.astro
 ├── styles/
-│   └── global.css
 └── config/
-    └── site.mjs
-```
-
-## Architecture
-
-```mermaid
-flowchart LR
-  A["xvadur.com /"] --> B["HeroGrid\nasym. 3-col"]
-  A --> C["/jozo\nAgent identity"]
-  A --> D["/ai-recepcia\nConversion page"]
-  A --> E["/blog\nJožov denník"]
-  C --> F["OpenClaw\nJožo 🦞"]
-  D --> G["cal.com/xvadur\nBook a Call"]
-  D --> H["adam@xvadur.com\nDemo CTA"]
 ```
 
 ## Kontakt
@@ -118,10 +81,6 @@ flowchart LR
 - **Booking:** [cal.com/xvadur](https://cal.com/xvadur)
 - **Web:** [xvadur.com](https://xvadur.com)
 
----
-
-*Nie som random tech startup. Som kolega, ktorý pozná váš svet – a vie ho zlepšiť.*
-
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF3EA5,100:4FC3F7&height=120&section=footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ef4444,100:f97316&height=120&section=footer" />
 </p>
