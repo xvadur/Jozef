@@ -13,8 +13,14 @@ const wins = [
   {
     metric: "1",
     title: "Podcast + blog publikácia",
-    desc: "Vytvorený audio výstup (Adam Január + Luki Zajo) a publikovaný článok na jozef.xvadur.",
+    desc: "Vytvorený audio výstup a publikovaný článok na jozef.xvadur.",
   },
+];
+
+const proofNotes = [
+  "Reálna exekúcia cez denné iterácie, nie jednorazové demo.",
+  "Každý flow je ladený na konkrétnu prevádzku a jej bottlenecky.",
+  "Pilot setup ide v krátkych krokoch, aby bol výsledok merateľný.",
 ];
 ---
 
@@ -32,5 +38,24 @@ const wins = [
         <p class="text-sm font-light" style="opacity: 0.75;">{w.desc}</p>
       </div>
     ))}
+
+    <div class="md:col-span-3 p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Proof notes</p>
+      <div class="grid gap-3 md:grid-cols-3 mt-3">
+        {proofNotes.map((n) => (
+          <div class="p-4" style="border: var(--border-brutal); background: var(--color-bg);">
+            <p class="text-sm" style="opacity: 0.85;">{n}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="md:col-span-3 p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Feedback z terénu</p>
+      <blockquote class="text-xl font-light" style="line-height:1.6;">
+        „Toto nie je chatbot na efekt. Keď je flow správne nastavený, ušetrí čas tímu už v prvom týždni pilotu."
+      </blockquote>
+      <p class="text-sm mt-3" style="opacity:0.7;">— pilot insight, interný builder log</p>
+    </div>
   </div>
 </section>
