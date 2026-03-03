@@ -55,7 +55,7 @@ const track = [...integrations, ...integrations];
     gap: 0.7rem;
     width: max-content;
     padding: 0 1.5rem;
-    animation: integrationsScroll 36s linear infinite;
+    animation: integrationsScroll 40s linear infinite;
   }
 
   .integration-marquee:hover .integration-track { animation-play-state: paused; }
@@ -73,9 +73,14 @@ const track = [...integrations, ...integrations];
     flex: 0 0 auto;
   }
 
+  .integration-card:hover {
+    box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.35), 4px 4px 0px var(--color-black);
+  }
+
   .integration-card--openclaw:hover {
     background: var(--color-red);
     color: #fff;
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.45), 4px 4px 0px var(--color-black);
   }
 
   .integration-card--openclaw:hover .integration-name {
@@ -110,7 +115,7 @@ const track = [...integrations, ...integrations];
   }
 
   @media (max-width: 768px) {
-    .integration-track { animation-duration: 28s; }
+    .integration-track { animation-duration: 31s; }
     .integration-card { width: min(84vw, 270px); min-height: 86px; padding: 0.75rem; }
     .integration-name { font-size: 0.8rem; }
   }
