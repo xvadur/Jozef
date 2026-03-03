@@ -1,99 +1,77 @@
 ---
 const integrations = [
-  {
-    iconUrl: "https://cdn.simpleicons.org/openai/412991",
-    name: "OpenClaw",
-    detail: "Core runtime orchestrace, pamäť a tool routing.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/googlecalendar/4285F4",
-    name: "Google Calendar",
-    detail: "Čítanie/plánovanie udalostí a booking logika.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/gmail/EA4335",
-    name: "Gmail",
-    detail: "Inbox workflowy, drafty a odpovede.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/linear/5E6AD2",
-    name: "Linear",
-    detail: "Issue tracking, delivery checkpointy a execution flow.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/airtable/18BFFF",
-    name: "Airtable",
-    detail: "CRM-like tabuľky a bezpečné upserty cez API.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/cloudflare/F38020",
-    name: "Cloudflare",
-    detail: "DNS, SSL, zones a infra nastavenia.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/github/181717",
-    name: "GitHub",
-    detail: "Repo zmeny, commity, push a release workflow.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
-    name: "n8n",
-    detail: "Automatizácie, workflow runy a exekúcia triggerov.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
-    name: "Supabase",
-    detail: "DB operácie, SQL, vektory a storage.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/brave/FB542B",
-    name: "Brave Search",
-    detail: "Realtime web research a content extraction.",
-  },
-  {
-    iconUrl: "https://cdn.simpleicons.org/telegram/26A5E4",
-    name: "Telegram",
-    detail: "Skupiny, topicy, notifikácie a command loop.",
-  },
+  { iconUrl: "https://cdn.simpleicons.org/openai/412991", name: "OpenClaw", detail: "Core runtime orchestrace, pamäť a tool routing." },
+  { iconUrl: "https://cdn.simpleicons.org/googlecalendar/4285F4", name: "Google Calendar", detail: "Čítanie/plánovanie udalostí a booking logika." },
+  { iconUrl: "https://cdn.simpleicons.org/gmail/EA4335", name: "Gmail", detail: "Inbox workflowy, drafty a odpovede." },
+  { iconUrl: "https://cdn.simpleicons.org/linear/5E6AD2", name: "Linear", detail: "Issue tracking, delivery checkpointy a execution flow." },
+  { iconUrl: "https://cdn.simpleicons.org/airtable/18BFFF", name: "Airtable", detail: "CRM-like tabuľky a bezpečné upserty cez API." },
+  { iconUrl: "https://cdn.simpleicons.org/cloudflare/F38020", name: "Cloudflare", detail: "DNS, SSL, zones a infra nastavenia." },
+  { iconUrl: "https://cdn.simpleicons.org/github/181717", name: "GitHub", detail: "Repo zmeny, commity, push a release workflow." },
+  { iconUrl: "https://cdn.simpleicons.org/n8n/EA4B71", name: "n8n", detail: "Automatizácie, workflow runy a exekúcia triggerov." },
+  { iconUrl: "https://cdn.simpleicons.org/supabase/3ECF8E", name: "Supabase", detail: "DB operácie, SQL, vektory a storage." },
+  { iconUrl: "https://cdn.simpleicons.org/brave/FB542B", name: "Brave Search", detail: "Realtime web research a content extraction." },
+  { iconUrl: "https://cdn.simpleicons.org/telegram/26A5E4", name: "Telegram", detail: "Skupiny, topicy, notifikácie a command loop." },
 ];
 
 const track = [...integrations, ...integrations];
 ---
 
 <section id="co-jozo-robi" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 140ms;">
-  <div
-    class="p-6"
-    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
-  >
-    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">
-      Integrácie s API prístupom
-    </p>
+  <div class="p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Integrácie s API prístupom</p>
     <h2 class="text-2xl font-light tracking-tight">Jožo pracuje naprieč stackom</h2>
     <p class="text-sm mt-2" style="opacity:0.72;">Hover = detail integrácie · pás sa pri hover zastaví.</p>
   </div>
 
   <div class="integration-marquee mt-4">
-    <div class="integration-track">
+    <div class="integration-track" id="integration-track">
       {track.map((item, i) => (
-        <div class="integration-chip" aria-hidden={i >= integrations.length ? "true" : "false"}>
+        <button
+          type="button"
+          class="integration-chip"
+          aria-hidden={i >= integrations.length ? "true" : "false"}
+          data-name={item.name}
+          data-detail={item.detail}
+        >
           <img class="integration-icon" src={item.iconUrl} alt={`${item.name} logo`} loading="lazy" decoding="async" />
           <span class="integration-name">{item.name}</span>
-          <div class="integration-detail">{item.detail}</div>
-        </div>
+        </button>
       ))}
     </div>
   </div>
+
+  <div id="integration-detail-panel" class="integration-detail-panel mt-3" role="status" aria-live="polite">
+    <p class="integration-detail-kicker">Detail integrácie</p>
+    <p id="integration-detail-text">OpenClaw — Core runtime orchestrace, pamäť a tool routing.</p>
+  </div>
 </section>
+
+<script>
+  const chips = document.querySelectorAll('.integration-chip');
+  const detailText = document.getElementById('integration-detail-text');
+
+  const setDetail = (chip) => {
+    if (!chip || !detailText) return;
+    const name = chip.getAttribute('data-name') || '';
+    const detail = chip.getAttribute('data-detail') || '';
+    detailText.textContent = `${name} — ${detail}`;
+  };
+
+  chips.forEach((chip, index) => {
+    chip.addEventListener('mouseenter', () => setDetail(chip));
+    chip.addEventListener('focus', () => setDetail(chip));
+    if (index === 0) setDetail(chip);
+  });
+</script>
 
 <style>
   .integration-marquee {
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: hidden;
     border: var(--border-brutal);
     box-shadow: var(--shadow-brutal);
     background: var(--color-bg);
-    padding: 2.1rem 0 1.1rem;
+    padding: 0.95rem 0;
     mask-image: linear-gradient(to right, transparent 0, black 3%, black 97%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 3%, black 97%, transparent 100%);
   }
@@ -107,12 +85,9 @@ const track = [...integrations, ...integrations];
     animation: integrationsScroll 36s linear infinite;
   }
 
-  .integration-marquee:hover .integration-track {
-    animation-play-state: paused;
-  }
+  .integration-marquee:hover .integration-track { animation-play-state: paused; }
 
   .integration-chip {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -121,11 +96,12 @@ const track = [...integrations, ...integrations];
     box-shadow: var(--shadow-brutal-sm);
     background: #fff;
     flex: 0 0 auto;
-    z-index: 1;
+    cursor: default;
   }
 
-  .integration-chip:hover {
-    z-index: 20;
+  .integration-chip:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
   }
 
   .integration-icon {
@@ -145,28 +121,27 @@ const track = [...integrations, ...integrations];
     white-space: nowrap;
   }
 
-  .integration-detail {
-    position: absolute;
-    left: 0;
-    bottom: calc(100% + 8px);
-    width: 230px;
-    padding: 0.6rem 0.7rem;
+  .integration-detail-panel {
     border: var(--border-brutal);
     box-shadow: var(--shadow-brutal-sm);
-    background: var(--color-silver);
-    color: var(--color-text);
-    font-size: 0.75rem;
-    line-height: 1.35;
-    opacity: 0;
-    transform: translateY(4px);
-    pointer-events: none;
-    transition: opacity 140ms ease, transform 140ms ease;
-    z-index: 10;
+    background: var(--color-bg);
+    padding: 0.7rem 0.9rem;
+    min-height: 66px;
   }
 
-  .integration-chip:hover .integration-detail {
-    opacity: 1;
-    transform: translateY(0);
+  .integration-detail-kicker {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--color-blue-deep);
+    margin-bottom: 0.2rem;
+  }
+
+  #integration-detail-text {
+    font-size: 0.86rem;
+    line-height: 1.35;
+    opacity: 0.86;
   }
 
   @keyframes integrationsScroll {
@@ -177,7 +152,6 @@ const track = [...integrations, ...integrations];
   @media (max-width: 768px) {
     .integration-track { animation-duration: 28s; }
     .integration-name { font-size: 0.72rem; }
-    .integration-detail { display: none; }
   }
 
   @media (prefers-reduced-motion: reduce) {
