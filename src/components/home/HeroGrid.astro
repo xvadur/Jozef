@@ -17,24 +17,23 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
       >
         <div>
           <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue);">
-            AI Striko · Slovensko
+            jozef.xvadur · Slovensko
           </p>
           <h1 class="text-5xl font-light leading-tight mb-4" style="color: var(--color-text);">
-            10 rokov urgentná medicína.<br />
-            <span style="color: var(--color-blue);">Dnes AI.</span>
+            AI recepcia pre ambulancie.<br />
+            <span style="color: var(--color-blue);">Menej chaosu, viac vybavených pacientov.</span>
           </h1>
-          <p class="text-lg font-light max-w-lg" style="color: var(--color-text); opacity: 0.7;">
-            Desať rokov zdravotníctvo — práca priamo s ľuďmi.<br />
-            Osem mesiacov AI buildovanie od základov.<br />
-            Teraz spájam jedno s druhým.
+          <p class="text-lg font-light max-w-xl" style="color: var(--color-text); opacity: 0.72;">
+            Nasadenie AI hlasového asistenta + booking flow do reálnej prevádzky.
+            Cieľ je jednoduchý: menej zmeškaných hovorov, rýchlejšie objednávanie a voľnejšie ruky pre personál.
           </p>
         </div>
         <div class="flex gap-3 mt-6 flex-wrap">
-          <BrutalistButton href="/ai-recepcia" variant="blue" size="md">
-            AI Recepcia
+          <BrutalistButton href="https://cal.com/xvadur" variant="blue" size="md" target="_blank">
+            Rezervovať 20-min audit
           </BrutalistButton>
-          <BrutalistButton href="/jozo" variant="white" size="md">
-            Čo je Jožo?
+          <BrutalistButton href="/ai-recepcia" variant="white" size="md">
+            Ako to funguje
           </BrutalistButton>
         </div>
       </div>
@@ -66,7 +65,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
       </div>
     </AnimatedBlock>
 
-    <!-- AI Striko block: col 1, row 2 -->
+    <!-- Service block: col 1, row 2 -->
     <AnimatedBlock client:load delay={0.2}>
       <div
         class="p-8 flex flex-col justify-between h-full"
@@ -76,9 +75,10 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
           Firma
         </p>
         <div>
-          <h3 class="text-3xl font-bold mb-2">AI Striko</h3>
+          <h3 class="text-3xl font-bold mb-2">AI Recepcia</h3>
           <p class="text-sm font-light" style="opacity: 0.7;">
-            Staviame AI riešenia, ktoré fungujú v bežnej prevádzke.<br />Menej zmeškaných vecí, viac vybavených vecí.
+            Telefonický AI asistent pre ambulancie a služby.
+            Preberie opakujúce sa hovory, predkvalifikuje a posunie booking ďalej.
           </p>
         </div>
       </div>
@@ -141,6 +141,22 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
       </div>
     </AnimatedBlock>
   </div>
+
+  <!-- Trust strip -->
+  <div class="trust-grid mt-4 grid gap-3" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <div class="p-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal-sm); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Status</p>
+      <p class="text-sm mt-1">Prvý pilot v príprave</p>
+    </div>
+    <div class="p-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal-sm); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Niche</p>
+      <p class="text-sm mt-1">Healthcare-first prístup</p>
+    </div>
+    <div class="p-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal-sm); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Stack</p>
+      <p class="text-sm mt-1">OpenClaw orchestrace + voice AI</p>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -151,10 +167,16 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
     .hero-grid > div {
       grid-column: span 1 !important;
     }
+    .trust-grid {
+      grid-template-columns: 1fr !important;
+    }
   }
   @media (min-width: 769px) and (max-width: 1024px) {
     .hero-grid {
       grid-template-columns: 1fr 1fr !important;
+    }
+    .trust-grid {
+      grid-template-columns: 1fr 1fr 1fr !important;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 export const SITE = {
   title: "xvadur",
-  description: "Adam Rudavský (xvadur) – 10 rokov urgentná medicína, dnes AI. Zakladateľ AI Striko. Jožo AI operátor. AI Recepcia pre ambulancie.",
+  description: "Adam Rudavský (xvadur) – AI recepcia pre ambulancie a služby. Jožo AI operátor, automatizácie a booking flowy pre reálnu prevádzku.",
   defaultLanguage: "sk",
   url: "https://xvadur.com",
   author: "xvadur",
