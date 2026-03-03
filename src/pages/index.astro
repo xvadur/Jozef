@@ -7,8 +7,8 @@ import { SITE } from "../config/site.mjs";
 ---
 
 <Layout
-  title={SITE.title}
-  description={SITE.description}
+  title="AI recepcia pre ambulancie | jozef.xvadur"
+  description="Pomáham ambulanciám znížiť počet zmeškaných hovorov a zrýchliť objednávanie pacientov cez AI recepciu a booking flow."
   canonicalURL={SITE.url}
 >
   <Header />
@@ -16,4 +16,19 @@ import { SITE } from "../config/site.mjs";
     <HeroGrid />
   </main>
   <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'jozef.xvadur',
+    url: SITE.url,
+    areaServed: 'Slovakia',
+    serviceType: 'AI recepcia pre ambulancie',
+    description: 'AI recepcia pre ambulancie: menej zmeškaných hovorov, rýchlejší booking a menej chaosu na linke.',
+    contactPoint: [{
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: 'adam@xvadur.com'
+    }]
+  })} />
 </Layout>

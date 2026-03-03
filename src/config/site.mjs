@@ -1,6 +1,6 @@
 export const SITE = {
-  title: "xvadur",
-  description: "Adam Rudavský (xvadur) – AI recepcia pre ambulancie a služby. Jožo AI operátor, automatizácie a booking flowy pre reálnu prevádzku.",
+  title: "jozef.xvadur | AI recepcia pre ambulancie",
+  description: "AI recepcia pre ambulancie: menej zmeškaných hovorov, rýchlejší booking a menej chaosu na linke. Pilot, ktorý nasadíme do reálnej prevádzky."
   defaultLanguage: "sk",
   url: "https://xvadur.com",
   author: "xvadur",
