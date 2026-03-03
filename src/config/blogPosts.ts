@@ -10,11 +10,11 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    title: "Builder log 03/03: README cleanup, rebrand a nový baseline",
+    title: "Prvý pilot: setup, realita a ďalší krok",
     date: "2026-03-03",
     perex:
       "Dnes sme čistili identitu projektu: README rebrand na jozef.xvadur, odstránenie starých referencií a pripravenie stabilného baseline pre ďalší build sprint.",
-    slug: "builder-log-2026-03-03-readme-rebrand",
+    slug: "prvy-pilot-2026-03-03",
     readTime: "4 min",
     content: [
       "Dnešný builder deň bol o poriadku v základoch. Najprv sme zladili smer projektu a potvrdili, že repo Jozef je správny source of truth pre web.",
@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     title: "AI agent v praxi: ako som za 1 deň nasadil voice flow pre zubára aj realiťáka",
-    date: "2026-03-02",
+    date: "2026-03-01",
     perex:
       "Reálna prípadová štúdia z terénu: Telegram hlasovky, OpenClaw orchestrace, ElevenLabs voice agent a Google Calendar booking. Bez teórie, len workflow, ktorý funguje.",
     slug: "ai-uz-nie-je-chatbot-1-den-2-agenti-0-vyhovoriek",
