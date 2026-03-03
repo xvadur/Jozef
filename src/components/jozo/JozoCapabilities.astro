@@ -41,11 +41,11 @@ const capabilityTrack = [...capabilities, ...capabilities];
     <div class="cap-track">
       {capabilityTrack.map((c, i) => (
         <article class="cap-card jozo-card-hover" aria-hidden={i >= capabilities.length ? "true" : "false"}>
-          <span class="text-3xl mb-4 block">{c.icon}</span>
-          <h3 class="text-lg font-semibold mb-2">{c.title}</h3>
-          <p class="text-sm font-light" style="opacity: 0.72;">{c.desc}</p>
-          <div class="cap-detail">
-            <p class="text-sm mt-3" style="opacity: 0.9;">{c.detail}</p>
+          <span class="text-2xl mb-2 block">{c.icon}</span>
+          <h3 class="text-base font-semibold mb-2">{c.title}</h3>
+          <div class="cap-copy">
+            <p class="cap-desc text-sm font-light">{c.desc}</p>
+            <p class="cap-detail text-sm">{c.detail}</p>
           </div>
         </article>
       ))}
@@ -74,27 +74,49 @@ const capabilityTrack = [...capabilities, ...capabilities];
   }
 
   .cap-card {
-    width: min(82vw, 360px);
-    padding: 2rem;
+    width: min(72vw, 300px);
+    padding: 1.25rem;
     border: var(--border-brutal);
     box-shadow: var(--shadow-brutal);
     background-color: var(--color-bg);
     flex: 0 0 auto;
-    min-height: 260px;
+    min-height: 170px;
+  }
+
+  .cap-copy {
+    position: relative;
+    min-height: 72px;
+  }
+
+  .cap-desc,
+  .cap-detail {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .cap-desc {
+    opacity: 0.78;
+    transform: translateY(0);
   }
 
   .cap-detail {
-    max-height: 0;
-    overflow: hidden;
     opacity: 0;
     transform: translateY(4px);
-    transition: max-height 220ms ease, opacity 180ms ease, transform 180ms ease;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .cap-card:hover .cap-desc,
+  .cap-card:focus-within .cap-desc {
+    opacity: 0;
+    transform: translateY(-4px);
   }
 
   .cap-card:hover .cap-detail,
   .cap-card:focus-within .cap-detail {
-    max-height: 120px;
-    opacity: 1;
+    opacity: 0.95;
     transform: translateY(0);
   }
 
@@ -105,8 +127,10 @@ const capabilityTrack = [...capabilities, ...capabilities];
 
   @media (max-width: 768px) {
     .cap-track { animation-duration: 26s; }
-    .cap-card { width: min(86vw, 320px); padding: 1.5rem; min-height: 250px; }
-    .cap-detail { max-height: 120px; opacity: 1; transform: translateY(0); }
+    .cap-card { width: min(82vw, 280px); padding: 1.1rem; min-height: 165px; }
+    .cap-copy { min-height: 80px; }
+    .cap-desc { opacity: 0; transform: translateY(-4px); }
+    .cap-detail { opacity: 0.95; transform: translateY(0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
