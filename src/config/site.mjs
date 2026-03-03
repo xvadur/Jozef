@@ -1,6 +1,6 @@
 export const SITE = {
   title: "jozef.xvadur | AI recepcia pre ambulancie",
-  description: "AI recepcia pre ambulancie: menej zmeškaných hovorov, rýchlejší booking a menej chaosu na linke. Pilot, ktorý nasadíme do reálnej prevádzky."
+  description: "AI recepcia pre ambulancie: menej zmeškaných hovorov, rýchlejší booking a menej chaosu na linke. Pilot, ktorý nasadíme do reálnej prevádzky.",
   defaultLanguage: "sk",
   url: "https://xvadur.com",
   author: "xvadur",
