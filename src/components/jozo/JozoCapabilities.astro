@@ -88,11 +88,12 @@ const track = [...integrations, ...integrations];
 <style>
   .integration-marquee {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     border: var(--border-brutal);
     box-shadow: var(--shadow-brutal);
     background: var(--color-bg);
-    padding: 0.95rem 0;
+    padding: 0.95rem 0 2.4rem;
     mask-image: linear-gradient(to right, transparent 0, black 3%, black 97%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0, black 3%, black 97%, transparent 100%);
   }
@@ -120,6 +121,11 @@ const track = [...integrations, ...integrations];
     box-shadow: var(--shadow-brutal-sm);
     background: #fff;
     flex: 0 0 auto;
+    z-index: 1;
+  }
+
+  .integration-chip:hover {
+    z-index: 20;
   }
 
   .integration-icon {
@@ -139,7 +145,7 @@ const track = [...integrations, ...integrations];
   .integration-detail {
     position: absolute;
     left: 0;
-    bottom: calc(100% + 8px);
+    top: calc(100% + 8px);
     width: 230px;
     padding: 0.6rem 0.7rem;
     border: var(--border-brutal);
