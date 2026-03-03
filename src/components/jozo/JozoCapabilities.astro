@@ -1,9 +1,29 @@
 ---
 const capabilities = [
-  { icon: "📋", title: "Tasky & Priority", desc: "Premieňam chat intent na konkrétne kroky, poradie a exekučné bloky." },
-  { icon: "🧠", title: "Pamäť & Kontext", desc: "Držím kontinuitu medzi dňami cez memory stack a CRM follow-upy." },
-  { icon: "🔌", title: "Integrácie", desc: "Pracujem naprieč Google, Linear, Airtable, Cloudflare, GitHub a n8n." },
-  { icon: "📝", title: "Briefingy & Reporty", desc: "Vyrábam stručné reporty a rozhodovacie podklady použiteľné hneď." },
+  {
+    icon: "📋",
+    title: "Tasky & Priority",
+    desc: "Premieňam chat intent na konkrétne kroky, poradie a exekučné bloky.",
+    detail: "Rozsekám cieľ na realizovateľné kroky, navrhnem poradie podľa dopadu a dám jasný next action bez balastu.",
+  },
+  {
+    icon: "🧠",
+    title: "Pamäť & Kontext",
+    desc: "Držím kontinuitu medzi dňami cez memory stack a CRM follow-upy.",
+    detail: "Udržiavam čo bolo dohodnuté, čo je rozbehnuté a čo horí, aby sa nestrácal kontext medzi sessionmi.",
+  },
+  {
+    icon: "🔌",
+    title: "Integrácie",
+    desc: "Pracujem naprieč Google, Linear, Airtable, Cloudflare, GitHub a n8n.",
+    detail: "Prepájam systémy do jedného toku: od zadania cez update až po finálny výstup bez manuálneho prepínania.",
+  },
+  {
+    icon: "📝",
+    title: "Briefingy & Reporty",
+    desc: "Vyrábam stručné reporty a rozhodovacie podklady použiteľné hneď.",
+    detail: "Dostaneš stručné zhrnutie: čo je hotové, čo je bloknuté, čo je ďalší krok a kde je riziko.",
+  },
 ];
 
 const capabilityTrack = [...capabilities, ...capabilities];
@@ -24,6 +44,9 @@ const capabilityTrack = [...capabilities, ...capabilities];
           <span class="text-3xl mb-4 block">{c.icon}</span>
           <h3 class="text-lg font-semibold mb-2">{c.title}</h3>
           <p class="text-sm font-light" style="opacity: 0.72;">{c.desc}</p>
+          <div class="cap-detail">
+            <p class="text-sm mt-3" style="opacity: 0.9;">{c.detail}</p>
+          </div>
         </article>
       ))}
     </div>
@@ -57,6 +80,22 @@ const capabilityTrack = [...capabilities, ...capabilities];
     box-shadow: var(--shadow-brutal);
     background-color: var(--color-bg);
     flex: 0 0 auto;
+    min-height: 260px;
+  }
+
+  .cap-detail {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: max-height 220ms ease, opacity 180ms ease, transform 180ms ease;
+  }
+
+  .cap-card:hover .cap-detail,
+  .cap-card:focus-within .cap-detail {
+    max-height: 120px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @keyframes capScroll {
@@ -66,7 +105,8 @@ const capabilityTrack = [...capabilities, ...capabilities];
 
   @media (max-width: 768px) {
     .cap-track { animation-duration: 26s; }
-    .cap-card { width: min(86vw, 320px); padding: 1.5rem; }
+    .cap-card { width: min(86vw, 320px); padding: 1.5rem; min-height: 250px; }
+    .cap-detail { max-height: 120px; opacity: 1; transform: translateY(0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
