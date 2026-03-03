@@ -1,140 +1,181 @@
 ---
-const capabilities = [
-  {
-    icon: "📋",
-    title: "Tasky & Priority",
-    desc: "Premieňam chat intent na konkrétne kroky, poradie a exekučné bloky.",
-    detail: "Rozsekám cieľ na realizovateľné kroky, navrhnem poradie podľa dopadu a dám jasný next action bez balastu.",
-  },
+const integrations = [
   {
     icon: "🧠",
-    title: "Pamäť & Kontext",
-    desc: "Držím kontinuitu medzi dňami cez memory stack a CRM follow-upy.",
-    detail: "Udržiavam čo bolo dohodnuté, čo je rozbehnuté a čo horí, aby sa nestrácal kontext medzi sessionmi.",
+    name: "OpenClaw",
+    detail: "Core runtime orchestrace, pamäť a tool routing.",
   },
   {
-    icon: "🔌",
-    title: "Integrácie",
-    desc: "Pracujem naprieč Google, Linear, Airtable, Cloudflare, GitHub a n8n.",
-    detail: "Prepájam systémy do jedného toku: od zadania cez update až po finálny výstup bez manuálneho prepínania.",
+    icon: "📅",
+    name: "Google Calendar",
+    detail: "Čítanie/plánovanie udalostí a booking logika.",
   },
   {
-    icon: "📝",
-    title: "Briefingy & Reporty",
-    desc: "Vyrábam stručné reporty a rozhodovacie podklady použiteľné hneď.",
-    detail: "Dostaneš stručné zhrnutie: čo je hotové, čo je bloknuté, čo je ďalší krok a kde je riziko.",
+    icon: "✉️",
+    name: "Gmail",
+    detail: "Inbox workflowy, drafty a odpovede.",
+  },
+  {
+    icon: "📈",
+    name: "Linear",
+    detail: "Issue tracking, delivery checkpointy a execution flow.",
+  },
+  {
+    icon: "🗂️",
+    name: "Airtable",
+    detail: "CRM-like tabuľky a bezpečné upserty cez API.",
+  },
+  {
+    icon: "☁️",
+    name: "Cloudflare",
+    detail: "DNS, SSL, zones a infra nastavenia.",
+  },
+  {
+    icon: "🐙",
+    name: "GitHub",
+    detail: "Repo zmeny, commity, push a release workflow.",
+  },
+  {
+    icon: "🔄",
+    name: "n8n",
+    detail: "Automatizácie, workflow runy a exekúcia triggerov.",
+  },
+  {
+    icon: "🧮",
+    name: "Supabase",
+    detail: "DB operácie, SQL, vektory a storage.",
+  },
+  {
+    icon: "🔎",
+    name: "Brave Search",
+    detail: "Realtime web research a content extraction.",
+  },
+  {
+    icon: "💬",
+    name: "Telegram",
+    detail: "Skupiny, topicy, notifikácie a command loop.",
   },
 ];
 
-const capabilityTrack = [...capabilities, ...capabilities];
+const track = [...integrations, ...integrations];
 ---
-<section id="co-jozo-robi" class="w-full pb-12 jozo-fade-in" style="animation-delay: 140ms;">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="p-6"
-      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
-      <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Čo reálne robím</p>
-      <h2 class="text-2xl font-light">Schopnosti</h2>
-    </div>
+
+<section id="co-jozo-robi" class="max-w-6xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 140ms;">
+  <div
+    class="p-6"
+    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
+  >
+    <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">
+      Integrácie s API prístupom
+    </p>
+    <h2 class="text-2xl font-light">Jožo pracuje naprieč stackom</h2>
+    <p class="text-sm mt-2" style="opacity:0.75;">Hover = detail integrácie. Pás sa pri hover zastaví.</p>
   </div>
 
-  <div class="cap-marquee mt-3">
-    <div class="cap-track">
-      {capabilityTrack.map((c, i) => (
-        <article class="cap-card jozo-card-hover" aria-hidden={i >= capabilities.length ? "true" : "false"}>
-          <span class="text-2xl mb-2 block">{c.icon}</span>
-          <h3 class="text-base font-semibold mb-2">{c.title}</h3>
-          <div class="cap-copy">
-            <p class="cap-desc text-sm font-light">{c.desc}</p>
-            <p class="cap-detail text-sm">{c.detail}</p>
-          </div>
-        </article>
+  <div class="integration-marquee mt-3">
+    <div class="integration-track">
+      {track.map((item, i) => (
+        <div class="integration-chip" aria-hidden={i >= integrations.length ? "true" : "false"}>
+          <span class="integration-icon" aria-hidden="true">{item.icon}</span>
+          <span class="integration-name">{item.name}</span>
+          <div class="integration-detail">{item.detail}</div>
+        </div>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .cap-marquee {
+  .integration-marquee {
     width: 100%;
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal);
+    background: var(--color-bg);
+    padding: 0.85rem 0;
+    mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
   }
 
-  .cap-track {
+  .integration-track {
     display: flex;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.7rem;
     width: max-content;
-    padding: 0 1.5rem;
-    animation: capScroll 34s linear infinite;
+    padding: 0 1rem;
+    animation: integrationsScroll 36s linear infinite;
   }
 
-  .cap-marquee:hover .cap-track {
+  .integration-marquee:hover .integration-track {
     animation-play-state: paused;
   }
 
-  .cap-card {
-    width: min(72vw, 300px);
-    padding: 1.25rem;
-    border: var(--border-brutal);
-    box-shadow: var(--shadow-brutal);
-    background-color: var(--color-bg);
-    flex: 0 0 auto;
-    min-height: 170px;
-  }
-
-  .cap-copy {
+  .integration-chip {
     position: relative;
-    min-height: 72px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.8rem;
+    border: 2px solid var(--color-black);
+    box-shadow: var(--shadow-brutal-sm);
+    background: #fff;
+    flex: 0 0 auto;
   }
 
-  .cap-desc,
-  .cap-detail {
+  .integration-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
+  .integration-name {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .integration-detail {
     position: absolute;
-    inset: 0;
-    margin: 0;
-    transition: opacity 180ms ease, transform 180ms ease;
-  }
-
-  .cap-desc {
-    opacity: 0.78;
-    transform: translateY(0);
-  }
-
-  .cap-detail {
+    left: 0;
+    bottom: calc(100% + 8px);
+    width: 230px;
+    padding: 0.6rem 0.7rem;
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal-sm);
+    background: var(--color-silver);
+    color: var(--color-text);
+    font-size: 0.75rem;
+    line-height: 1.35;
     opacity: 0;
     transform: translateY(4px);
-    font-weight: 400;
-    line-height: 1.45;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 140ms ease;
+    z-index: 10;
   }
 
-  .cap-card:hover .cap-desc,
-  .cap-card:focus-within .cap-desc {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-
-  .cap-card:hover .cap-detail,
-  .cap-card:focus-within .cap-detail {
-    opacity: 0.95;
+  .integration-chip:hover .integration-detail {
+    opacity: 1;
     transform: translateY(0);
   }
 
-  @keyframes capScroll {
+  @keyframes integrationsScroll {
     from { transform: translateX(0); }
-    to { transform: translateX(calc(-50% - 0.375rem)); }
+    to { transform: translateX(calc(-50% - 0.35rem)); }
   }
 
   @media (max-width: 768px) {
-    .cap-track { animation-duration: 26s; }
-    .cap-card { width: min(82vw, 280px); padding: 1.1rem; min-height: 165px; }
-    .cap-copy { min-height: 80px; }
-    .cap-desc { opacity: 0; transform: translateY(-4px); }
-    .cap-detail { opacity: 0.95; transform: translateY(0); }
+    .integration-track { animation-duration: 28s; }
+    .integration-name { font-size: 0.72rem; }
+    .integration-detail { display: none; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .cap-track { animation: none; }
-    .cap-marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+    .integration-track { animation: none; }
+    .integration-marquee {
+      overflow-x: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
   }
 </style>
