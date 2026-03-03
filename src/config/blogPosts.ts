@@ -10,6 +10,21 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Builder log 03/03: README cleanup, rebrand a nový baseline",
+    date: "2026-03-03",
+    perex:
+      "Dnes sme čistili identitu projektu: README rebrand na jozef.xvadur, odstránenie starých referencií a pripravenie stabilného baseline pre ďalší build sprint.",
+    slug: "builder-log-2026-03-03-readme-rebrand",
+    readTime: "4 min",
+    content: [
+      "Dnešný builder deň bol o poriadku v základoch. Najprv sme zladili smer projektu a potvrdili, že repo Jozef je správny source of truth pre web.",
+      "Potom prišiel README rebrand: názvoslovie sa upravilo na jozef.xvadur a odstránili sa staré odkazy, ktoré už nezodpovedajú aktuálnemu positioningu.",
+      "Riešili sme aj vizuálny detail: GIF v README musel mať stabilný URL, aby sa korektne renderoval v GitHub náhľade.",
+      "Výsledok nie je len kozmetika. Keď je repozitár čitateľný a konzistentný, každý ďalší dev krok je rýchlejší, jasnejší a bez chaosu.",
+      "Ďalší krok je nadviazať na tento baseline a shipnúť ďalší obsah + web iterácie v dennom rytme builder logov.",
+    ],
+  },
+  {
     title: "Rubicon Day: 1 deň, 2 agenti, 0 výhovoriek",
     date: "2026-03-02",
     perex:
