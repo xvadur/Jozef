@@ -50,7 +50,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
             Porozprávajme sa
           </p>
           <h2 class="text-2xl font-bold text-white leading-tight">
-            Book<br />a Call
+            Rýchly<br />audit
           </h2>
         </div>
         <BrutalistButton
@@ -201,20 +201,44 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
     </div>
   </AnimatedBlock>
 
-  <!-- Final CTA -->
+  <!-- Mini FAQ -->
   <AnimatedBlock client:load delay={0.65}>
+    <div class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">FAQ</p>
+      <div class="grid gap-3 md:gap-4 md:grid-cols-3">
+        <div class="p-4" style="border: var(--border-brutal); background: #fff;">
+          <p class="text-sm font-bold">Koľko trvá pilot?</p>
+          <p class="text-sm mt-1" style="opacity: 0.75;">Typicky 7–14 dní od úvodného callu po prvé ostré testy.</p>
+        </div>
+        <div class="p-4" style="border: var(--border-brutal); background: #fff;">
+          <p class="text-sm font-bold">Musím meniť celý systém?</p>
+          <p class="text-sm mt-1" style="opacity: 0.75;">Nie. Začíname pilotom nad tým, čo už používaš, a napájame to postupne.</p>
+        </div>
+        <div class="p-4" style="border: var(--border-brutal); background: #fff;">
+          <p class="text-sm font-bold">Pre koho je to vhodné?</p>
+          <p class="text-sm mt-1" style="opacity: 0.75;">Pre ambulancie a služby, kde hovory a objednávky preťažujú personál.</p>
+        </div>
+      </div>
+    </div>
+  </AnimatedBlock>
+
+  <!-- Final CTA -->
+  <AnimatedBlock client:load delay={0.7}>
     <div class="mt-4 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: #FF3EA5;">
       <div>
         <p class="text-xs font-bold uppercase tracking-widest text-white opacity-80">Next step</p>
         <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mt-1">Poďme pozrieť, či to dáva zmysel aj pre tvoju prevádzku.</h3>
       </div>
-      <div class="flex flex-wrap gap-3">
-        <BrutalistButton href="https://cal.com/xvadur" variant="white" size="md" target="_blank">
-          Rezervovať call
-        </BrutalistButton>
-        <BrutalistButton href="mailto:adam@xvadur.com" variant="black" size="md">
-          Napísať e-mail
-        </BrutalistButton>
+      <div class="flex flex-col items-start gap-3 w-full md:w-auto">
+        <div class="flex flex-wrap gap-3">
+          <BrutalistButton href="https://cal.com/xvadur" variant="white" size="md" target="_blank">
+            Rezervovať call
+          </BrutalistButton>
+          <BrutalistButton href="mailto:adam@xvadur.com" variant="black" size="md">
+            Napísať e-mail
+          </BrutalistButton>
+        </div>
+        <p class="text-xs text-white/85 font-medium">CTA varianty: „Rezervovať call“ / „Chcem pilot audit“</p>
       </div>
     </div>
   </AnimatedBlock>
