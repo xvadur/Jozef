@@ -5,14 +5,14 @@ const steps = [
   { num: "03", title: "Live", desc: "AI začne dvíhať hovory. Vy máte prehľad a kontrolu." },
 ];
 ---
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section id="proces" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 140ms;">
   <div class="grid gap-3 md:grid-cols-3">
     <div class="md:col-span-3 p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
       <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Proces</p>
       <h2 class="text-2xl font-light">Ako to funguje?</h2>
     </div>
     {steps.map(step => (
-      <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <div class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
         <p class="text-5xl font-bold mb-4" style="color: var(--color-blue); opacity: 0.3;">{step.num}</p>
         <h3 class="text-lg font-semibold mb-2">{step.title}</h3>
         <p class="text-sm font-light" style="opacity: 0.7;">{step.desc}</p>

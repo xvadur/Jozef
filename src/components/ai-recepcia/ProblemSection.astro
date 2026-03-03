@@ -6,7 +6,7 @@ const pains = [
   { label: "Ďalší zamestnanec problém celý nevyrieši", desc: "Mzdové náklady rastú, no hovory mimo ordinačných hodín zostávajú" },
 ];
 ---
-<section class="max-w-7xl mx-auto px-6 pb-12">
+<section id="problem" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 80ms;">
   <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
     <div class="lg:col-span-4 p-6"
       style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
@@ -14,7 +14,7 @@ const pains = [
       <h2 class="text-3xl font-light">Poznáte to?</h2>
     </div>
     {pains.map(p => (
-      <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <div class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
         <p class="text-2xl mb-3" aria-hidden="true">✗</p>
         <h3 class="text-base font-semibold mb-2">{p.label}</h3>
         <p class="text-sm font-light" style="opacity: 0.7;">{p.desc}</p>

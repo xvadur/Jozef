@@ -7,26 +7,27 @@ import BrutalistButton from "../ui/BrutalistButton.astro";
       style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
       <div>
         <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue);">
-          AI Striko · Pre kliniky
+          jozef.xvadur · AI recepcia pre kliniky
         </p>
         <h1 class="text-5xl font-light leading-tight mb-4">
           Žiadne zmeškané hovory.<br />
           <span style="color: var(--color-pink);">Žiadni stratení pacienti.</span>
         </h1>
         <p class="text-xl font-light max-w-xl" style="opacity: 0.7;">
-          AI recepcia, ktorá zdvihne telefón 24/7, objedná pacienta a pomôže chrániť váš príjem.
+          AI recepcia, ktorá zdvihne telefón 24/7, objedná pacienta a pomôže stabilizovať váš príjem bez chaosu na linke.
         </p>
       </div>
       <div class="flex gap-3 mt-6 flex-wrap">
-        <BrutalistButton href="mailto:adam@xvadur.com" variant="pink" size="md">
-          Chcem DEMO (zadarmo)
+        <BrutalistButton href="https://cal.com/xvadur" variant="pink" size="md" target="_blank">
+          Rezervovať 20-min audit
         </BrutalistButton>
-        <BrutalistButton href="https://cal.com/xvadur" variant="black" size="md" target="_blank">
-          Rezervovať call →
+        <BrutalistButton href="#pricing" variant="black" size="md">
+          Pozrieť pricing →
         </BrutalistButton>
       </div>
+      <p class="text-xs mt-3" style="opacity:0.65;">Rýchle odkazy: <a href="#faq" class="underline">FAQ</a> · <a href="#proces" class="underline">Proces</a></p>
     </div>
-    <div class="p-8 flex flex-col justify-between"
+    <div class="p-8 flex flex-col justify-between jozo-press-card"
       style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
       <div class="space-y-3">
         {["24/7 dostupnosť", "Auto-objednávanie", "Triáž hovorov", "GDPR · EU hosting"].map(badge => (
