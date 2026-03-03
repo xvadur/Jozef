@@ -32,7 +32,7 @@ const proofNotes = [
       <h2 class="text-3xl font-light">Čo Jožo dnes reálne doručuje</h2>
     </div>
     {wins.map((w) => (
-      <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <div class="p-8 jozo-card-hover" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
         <p class="text-5xl font-light mb-3" style="color: var(--color-blue-deep);">{w.metric}</p>
         <h3 class="text-lg font-semibold mb-2">{w.title}</h3>
         <p class="text-sm font-light" style="opacity: 0.75;">{w.desc}</p>

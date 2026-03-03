@@ -88,3 +88,29 @@ body {
     animation: none;
   }
 }
+
+.jozo-card-hover {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.jozo-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px var(--color-black);
+}
+
+@keyframes jozoCtaPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.jozo-cta-pulse {
+  animation: jozoCtaPulse 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jozo-card-hover,
+  .jozo-cta-pulse {
+    transition: none;
+    animation: none;
+  }
+}
