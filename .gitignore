@@ -22,6 +22,10 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# local podcast scratch
+public/audio/seg-today-*.mp3
+public/audio/concat-today.txt
+
 # jetbrains setting folder
 .idea/
 docs/
