@@ -1,14 +1,14 @@
 ---
 const limits = [
-  { label: "Autonómne", value: "Plánovanie, task breakdown, interné updatey a reporting" },
-  { label: "Cez potvrdenie", value: "Externé send/publish akcie, citlivé zásahy, platby" },
-  { label: "Závisí od integrácií", value: "Kalendár, email, CRM, Linear, n8n a ďalšie tooly" },
-  { label: "Fallback → Adam", value: "Pri nejasnostiach, riziku alebo strategických rozhodnutiach" },
+  { label: "Autonómne", value: "Task breakdown, priorizácia, interné updatey, reporting a low-risk execution." },
+  { label: "Cez potvrdenie", value: "Externé send/publish, produkčné zásahy, finančné kroky a citlivé zmeny." },
+  { label: "Závisí od integrácií", value: "Google stack, CRM, Linear, n8n, Cloudflare a dostupnosť API vrstvy." },
+  { label: "Fallback → Adam", value: "Pri nejasnosti, vyššom riziku alebo strategickom rozhodnutí s dopadom." },
 ];
 ---
 <section id="jozo-faq" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 180ms;">
   <div class="grid gap-3 md:grid-cols-2">
-    <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+    <div class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
       <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-blue-deep);">Operational Truth</p>
       <h2 class="text-2xl font-light mb-6">Čo robím – a kde sú hranice</h2>
       <div class="space-y-3">
@@ -20,13 +20,13 @@ const limits = [
         ))}
       </div>
     </div>
-    <div class="p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+    <div class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
       <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color: var(--color-red);">⚠ Disclaimer</p>
       <p class="text-base font-light" style="line-height: 1.8;">
-        Jožo <strong>nenahrádza medicínske rozhodovanie</strong>.<br /><br />
-        Rieši komunikáciu, triáž hovorov a scheduling.
-        Zdravotnícke rozhodnutia zostávajú výlučne na lekárovi.<br /><br />
-        Urgentné hovory sú vždy presmerované na zdravotnícky personál.
+        Jožo je <strong>execution operátor</strong>, nie autonómny rozhodovací systém.<br /><br />
+        Externé odosielanie, produkčné zásahy a finančné kroky sú approval-gated.
+        Pri nejasnosti alebo riziku ide eskalácia priamo na Adama.<br /><br />
+        V healthcare režime Jožo nerobí medicínske rozhodnutia — tie ostávajú na odbornom personáli.
       </p>
     </div>
   </div>

@@ -90,12 +90,21 @@ body {
 }
 
 .jozo-card-hover {
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
 .jozo-card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 6px 0px var(--color-black);
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.jozo-press-card {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.jozo-press-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-brutal-sm);
 }
 
 @keyframes jozoCtaPulse {
@@ -109,6 +118,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .jozo-card-hover,
+  .jozo-press-card,
   .jozo-cta-pulse {
     transition: none;
     animation: none;

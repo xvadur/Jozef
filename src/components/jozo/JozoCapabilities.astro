@@ -18,7 +18,7 @@ const integrations = [
 const track = [...integrations, ...integrations];
 ---
 
-<section id="co-jozo-robi" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 140ms;">
+<section id="co-jozo-robi" class="max-w-7xl mx-auto px-6 pb-6 jozo-fade-in" style="animation-delay: 140ms;">
   <div class="p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
     <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Aktívne integrácie</p>
     <h2 class="text-2xl font-light tracking-tight">Jožo pracuje naprieč stackom</h2>
@@ -28,7 +28,7 @@ const track = [...integrations, ...integrations];
   <div class="integration-marquee mt-4" aria-label="Aktívne integrácie">
     <div class="integration-track">
       {track.map((item, i) => (
-        <article class="integration-card" aria-hidden={i >= integrations.length ? "true" : "false"}>
+        <article class={`integration-card jozo-press-card ${item.name === 'OpenClaw' ? 'integration-card--openclaw' : ''}`} aria-hidden={i >= integrations.length ? "true" : "false"}>
           <img class="integration-icon" src={item.iconUrl} alt={`${item.name} logo`} loading="lazy" decoding="async" />
           <span class="integration-name">{item.name}</span>
         </article>
@@ -68,14 +68,22 @@ const track = [...integrations, ...integrations];
     gap: 0.6rem;
     padding: 0.9rem;
     border: var(--border-brutal);
-    box-shadow: var(--shadow-brutal-sm);
+    box-shadow: var(--shadow-brutal);
     background: #fff;
     flex: 0 0 auto;
-    transition: transform 160ms ease;
   }
 
-  .integration-card:hover {
-    transform: translateY(-2px);
+  .integration-card--openclaw:hover {
+    background: var(--color-red);
+    color: #fff;
+  }
+
+  .integration-card--openclaw:hover .integration-name {
+    color: #fff;
+  }
+
+  .integration-card--openclaw:hover .integration-icon {
+    filter: brightness(0) invert(1);
   }
 
   .integration-icon {

@@ -13,17 +13,17 @@ const agents = [
 const track = [...agents, ...agents];
 ---
 
-<section id="singularity-lanes" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 160ms;">
+<section id="singularity-lanes" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 160ms; margin-top: 0.25rem;">
   <div class="p-6" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
     <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Singularity Operating Model</p>
     <h2 class="text-2xl font-light tracking-tight">Agent showcase podľa live lane systému</h2>
     <p class="text-sm mt-2" style="opacity:0.72;">Hover kartu = detail role agenta. Pás sa pri hover zastaví.</p>
   </div>
 
-  <div class="agent-marquee mt-4">
+  <div class="agent-marquee mt-3">
     <div class="agent-track">
       {track.map((a, i) => (
-        <article class="agent-card" aria-hidden={i >= agents.length ? "true" : "false"}>
+        <article class="agent-card jozo-press-card" aria-hidden={i >= agents.length ? "true" : "false"}>
           <p class="agent-lane">{a.lane}</p>
           <p class="agent-name">{a.agent}</p>
           <p class="agent-role">{a.role}</p>
@@ -33,15 +33,15 @@ const track = [...agents, ...agents];
   </div>
 
   <div class="grid gap-3 md:grid-cols-3 mt-4">
-    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+    <div class="p-4 jozo-press-card" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
       <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Guardrail</p>
       <p class="text-sm mt-1">Žiadny outbound send bez approval.</p>
     </div>
-    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+    <div class="p-4 jozo-press-card" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
       <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Safety</p>
       <p class="text-sm mt-1">Žiadne deštruktívne production zmeny bez approval.</p>
     </div>
-    <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
+    <div class="p-4 jozo-press-card" style="border: var(--border-brutal); background: var(--color-silver); box-shadow: var(--shadow-brutal-sm);">
       <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Escalation</p>
       <p class="text-sm mt-1">Blocker nad 30 min ide do #command-center.</p>
     </div>
@@ -63,7 +63,7 @@ const track = [...agents, ...agents];
     gap: 0.75rem;
     width: max-content;
     padding: 0 1rem;
-    animation: agentScroll 38s linear infinite;
+    animation: agentScroll 38s linear infinite reverse;
   }
 
   .agent-marquee:hover .agent-track { animation-play-state: paused; }
@@ -73,13 +73,10 @@ const track = [...agents, ...agents];
     min-height: 132px;
     padding: 0.9rem;
     border: var(--border-brutal);
-    box-shadow: var(--shadow-brutal-sm);
+    box-shadow: var(--shadow-brutal);
     background: #fff;
     flex: 0 0 auto;
-    transition: transform 160ms ease;
   }
-
-  .agent-card:hover { transform: translateY(-2px); }
 
   .agent-lane {
     font-size: 0.68rem;
