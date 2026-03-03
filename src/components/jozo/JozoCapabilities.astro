@@ -46,6 +46,10 @@ const capabilityTrack = [...capabilities, ...capabilities];
     animation: capScroll 34s linear infinite;
   }
 
+  .cap-marquee:hover .cap-track {
+    animation-play-state: paused;
+  }
+
   .cap-card {
     width: min(82vw, 360px);
     padding: 2rem;
