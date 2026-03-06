@@ -34,6 +34,7 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--color-bg);
+  overflow-x: hidden;
 }
 
 /* Accessibility: Skip to content */
