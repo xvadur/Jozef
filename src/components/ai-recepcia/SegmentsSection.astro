@@ -22,23 +22,33 @@ const segments = [
 ---
 
 <section id="segmenty" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 120ms;">
-  <div class="p-8 mb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
-    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-yellow);">
-    <div>
-      <p class="text-xs font-bold uppercase tracking-widest mb-1">Segmenty</p>
-      <h2 class="text-3xl font-light">Kde AI recepcia dáva okamžitý biznis efekt</h2>
-      <p class="font-light mt-1" style="opacity: 0.8;">Začíname tam, kde je najvyšší tlak na hovory a najväčšia strata leadov.</p>
+  <div class="grid gap-3 md:grid-cols-3">
+    <div class="md:col-span-3 p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+      style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-blue-deep); color: var(--color-bg);">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest mb-1" style="opacity:.8;">Segmenty</p>
+        <h2 class="text-3xl font-light">Kde AI recepcia prináša najrýchlejší ROI</h2>
+        <p class="font-light mt-1" style="opacity: 0.85;">Jeden systém, tri jasné use-casy podľa typu prevádzky.</p>
+      </div>
+      <div class="p-3 text-xs font-bold uppercase tracking-wider"
+        style="border: var(--border-brutal); background: var(--color-bg); color: var(--color-blue-deep);">
+        Pilot-ready
+      </div>
     </div>
-  </div>
 
-  <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
     {segments.map(s => (
       <article class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
-        <span class="text-3xl mb-3 block">{s.icon}</span>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-3xl">{s.icon}</span>
+          <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1"
+            style="border: var(--border-brutal); background: var(--color-silver);">
+            Segment
+          </span>
+        </div>
         <h3 class="text-base font-semibold mb-1">{s.title}</h3>
-        <p class="text-sm font-light mb-3" style="opacity: .75;">{s.desc}</p>
-        <ul class="text-xs font-light space-y-1" style="opacity:.8;">
-          {s.points.map((p) => <li>• {p}</li>)}
+        <p class="text-sm font-light mb-4" style="opacity: .72;">{s.desc}</p>
+        <ul class="text-xs font-light space-y-2" style="opacity:.85;">
+          {s.points.map((p) => <li class="flex items-start gap-2"><span style="color:var(--color-pink);font-weight:700;">■</span><span>{p}</span></li>)}
         </ul>
       </article>
     ))}
