@@ -1,54 +1,172 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import RecepciahHero from "../components/ai-recepcia/RecepciahHero.astro";
-import ProblemSection from "../components/ai-recepcia/ProblemSection.astro";
-import SolutionSection from "../components/ai-recepcia/SolutionSection.astro";
-import HowItWorks from "../components/ai-recepcia/HowItWorks.astro";
-import OnboardingTimeline from "../components/ai-recepcia/OnboardingTimeline.astro";
-import PricingGrid from "../components/ai-recepcia/PricingGrid.astro";
-import RoiBlock from "../components/ai-recepcia/RoiBlock.astro";
-import AboutAdam from "../components/ai-recepcia/AboutAdam.astro";
-import DemoBlock from "../components/ai-recepcia/DemoBlock.astro";
 import Footer from "../components/Footer.astro";
-import { SITE } from "../config/site.mjs";
 ---
+
 <Layout
-  title="AI recepcia pre ambulancie | menej zmeškaných hovorov"
-  description="AI recepcia pre ambulancie a kliniky: 24/7 dostupnosť, objednávanie pacientov, triáž hovorov a orientačný ROI v násobkoch nákladov."
+  title="Xvadur | AI Recepcia pre hotely"
+  description="AI recepcia pre hotely: 24/7 odpovede hosťom, menej zmeškaných dopytov a viac rezervácií."
 >
   <Header />
-  <main id="main-content" role="main">
-    <RecepciahHero />
-    <ProblemSection />
-    <SolutionSection />
-    <HowItWorks />
-    <OnboardingTimeline />
-    <PricingGrid />
-    <RoiBlock />
-    <AboutAdam />
-    <DemoBlock />
+  <main class="container landing" id="main-content" role="main">
+    <section class="hero">
+      <div>
+        <span class="label">Pre hotely • SK lokalizácia</span>
+        <h1>Keď recepcia nestíha, Xvadur AI odpovedá za vás.</h1>
+        <p class="sub">
+          AI recepcia pre hotely, ktorá vybaví dopyty hostí 24/7 na vašom čísle. Menej
+          zmeškaných hovorov, viac potvrdených rezervácií, prehľadný lead flow pre tím.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lead-form">Rezervovať demo</a>
+          <a class="btn btn-outline" href="#ako">Pozrieť riešenie</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Typické výsledky po nasadení</h3>
+        <p>Benchmark pre hotelové prevádzky (pilot + produkcia).</p>
+        <div class="metric-grid">
+          <div class="metric"><b>+25% až +35%</b><span>zachytené dopyty</span></div>
+          <div class="metric"><b>-30% až -45%</b><span>zaťaženie recepcie</span></div>
+          <div class="metric"><b>&lt; 5 sek.</b><span>prvá odpoveď hosťovi</span></div>
+          <div class="metric"><b>24/7</b><span>bez prestávok a víkendov</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="ako">
+      <div class="section-head">
+        <h2>Jasný conversion flow pre hotelový predaj.</h2>
+        <p>
+          Namiesto zmeškaných dopytov AI recepcia okamžite odpovie, zistí potreby hosťa,
+          predvyplní lead a odovzdá recepcii len relevantné prípady.
+        </p>
+      </div>
+
+      <div class="industries">
+        <span class="chip">Boutique hotely</span>
+        <span class="chip">Mestské hotely</span>
+        <span class="chip">Wellness rezorty</span>
+        <span class="chip">Penzióny</span>
+        <span class="chip">Apartmánové domy</span>
+      </div>
+
+      <div class="compare">
+        <article class="card negative">
+          <h3>Bez AI recepcie</h3>
+          <ul>
+            <li>Zmeškané hovory mimo zmeny = stratené rezervácie.</li>
+            <li>Rovnaké otázky dookola zahlcujú front desk.</li>
+            <li>Leady sa strácajú medzi telefónom, mailom a chatom.</li>
+            <li>Hostia čakajú, konkurencia odpovie skôr.</li>
+          </ul>
+        </article>
+        <article class="card positive">
+          <h3>S Xvadur AI Recepciou</h3>
+          <ul>
+            <li>Každý dopyt dostane odpoveď do pár sekúnd.</li>
+            <li>AI predkvalifikuje hostí (termín, počet osôb, preferencie).</li>
+            <li>Recepcia rieši len prípady, kde je potrebný človek.</li>
+            <li>Viac potvrdených rezervácií bez navyšovania tímu.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Čo dostaneš v nasadení</h2>
+      </div>
+      <div class="features">
+        <article class="feature"><h4>24/7 odpovedanie hosťom</h4><p>Aj večer, víkendy a sviatky.</p></article>
+        <article class="feature"><h4>Lead kvalifikácia</h4><p>AI zozbiera dáta pre okamžitý follow-up.</p></article>
+        <article class="feature"><h4>Zhrnutie dopytu</h4><p>Kto volal, čo chcel, ďalší krok tímu.</p></article>
+        <article class="feature"><h4>SK + EN</h4><p>Plynulá komunikácia s domácimi aj zahraničnými hosťami.</p></article>
+        <article class="feature"><h4>Rýchle nasadenie</h4><p>Pilot online v horizonte dní.</p></article>
+        <article class="feature"><h4>Integrácia</h4><p>Webhook/CRM napojenie podľa potreby.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta" id="lead-form">
+        <div>
+          <h2>Rezervuj si 20-min demo</h2>
+          <p>
+            Prejdeme tvoje reálne scenáre a navrhneme, ako AI recepcia zlepší konverziu vo vašom hoteli.
+          </p>
+        </div>
+        <form class="form" id="leadForm">
+          <input type="text" name="name" placeholder="Meno a priezvisko" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="text" name="hotel" placeholder="Názov hotela" required />
+          <textarea name="message" placeholder="Koľko dopytov riešite mesačne? (voliteľné)"></textarea>
+          <button class="btn btn-primary" type="submit">Chcem booknuť demo</button>
+          <div class="tiny" id="form-result"></div>
+        </form>
+      </div>
+    </section>
   </main>
+
   <Footer />
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'AI recepcia pre ambulancie',
-    provider: { '@type': 'Organization', name: 'jozef.xvadur' },
-    areaServed: 'Slovakia',
-    serviceType: 'AI hlasová recepcia',
-    url: `${SITE.url}/ai-recepcia`,
-    description: 'AI recepcia pre ambulancie a kliniky: 24/7 dostupnosť, objednávanie pacientov a triáž hovorov.'
-  })} />
+  <div id="xvadur-chat-widget"></div>
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <script>
+    document.getElementById('leadForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      const payload = Object.fromEntries(new FormData(form).entries());
+      console.log('Lead payload:', payload);
+      document.getElementById('form-result').textContent = 'Vďaka, ozveme sa ti do 24 hodín.';
+      form.reset();
+    });
 
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      { '@type': 'Question', name: 'Čo ak AI urobí chybu?', acceptedAnswer: { '@type': 'Answer', text: 'AI má fallback na človeka a hovory sa logujú pre kontrolu.' } },
-      { '@type': 'Question', name: 'Ako je to s GDPR?', acceptedAnswer: { '@type': 'Answer', text: 'Dáta držíme na EU infra a vieme podpísať DPA.' } },
-      { '@type': 'Question', name: 'Koľko trvá setup?', acceptedAnswer: { '@type': 'Answer', text: 'Typicky 1–2 dni plus krátke testovanie.' } }
-    ]
-  })} />
+    const host = document.getElementById('xvadur-chat-widget');
+    const widget = document.createElement('elevenlabs-convai');
+    widget.setAttribute('agent-id', 'agent_4701kef07b3kek295qxafqqh1apm');
+    host.appendChild(widget);
+  </script>
+
+  <style>
+    .landing { padding: 32px 0 72px; }
+    .hero { display:grid; grid-template-columns: 1.06fr .94fr; gap:30px; align-items:center; margin-top:28px; }
+    .label { display:inline-flex; padding:7px 12px; border-radius:999px; background:#eafdfb; color:#0a6c68; border:1px solid #bff1ed; font-size:.8rem; font-weight:700; }
+    h1,h2,h3,h4 { margin:0; }
+    h1 { margin-top:14px; font-size:clamp(2rem,4vw,3.4rem); line-height:1.06; }
+    .sub { margin-top:14px; color:#52607a; max-width:60ch; }
+    .hero-actions { margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn { border:0; border-radius:999px; padding:12px 18px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; }
+    .btn-primary { color:#fff; background:linear-gradient(135deg,#0ea5a4,#2563eb); }
+    .btn-outline { background:#fff; border:1px solid #dbe3f1; color:#1f2a44; }
+    .hero-card,.card,.feature,.cta,.form { background:#fff; border:1px solid #dbe3f1; border-radius:16px; }
+    .hero-card { padding:20px; }
+    .hero-card p { color:#52607a; }
+    .metric-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+    .metric { border:1px solid #dbe3f1; border-radius:12px; padding:10px; }
+    .metric span { color:#647188; font-size:.88rem; }
+    section { margin-top:44px; }
+    .section-head p { color:#52607a; margin-top:10px; }
+    .industries { margin-top:14px; display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { border:1px solid #dbe3f1; border-radius:999px; background:#fff; padding:8px 12px; font-size:.88rem; }
+    .compare,.features { margin-top:16px; display:grid; gap:12px; }
+    .compare { grid-template-columns:1fr 1fr; }
+    .features { grid-template-columns:repeat(3,1fr); }
+    .card { padding:18px; }
+    .card ul { margin:10px 0 0; }
+    .negative h3 { color:#9a3412; }
+    .positive h3 { color:#0f766e; }
+    .feature { padding:16px; }
+    .feature p { color:#53607a; margin-top:8px; }
+    .cta { padding:22px; display:grid; grid-template-columns:1fr .95fr; gap:16px; }
+    .form { padding:14px; display:grid; gap:10px; }
+    .form input,.form textarea { border:1px solid #ccd7ed; border-radius:11px; padding:12px 13px; font:inherit; }
+    .form textarea { min-height:88px; resize:vertical; }
+    .tiny { font-size:.82rem; color:#627087; }
+    #xvadur-chat-widget { position:fixed; right:18px; bottom:18px; z-index:9999; }
+    @media (max-width: 980px) {
+      .hero,.compare,.features,.cta{ grid-template-columns:1fr; }
+    }
+  </style>
 </Layout>
