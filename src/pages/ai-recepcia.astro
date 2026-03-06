@@ -33,7 +33,7 @@ import { SITE } from "../config/site.mjs";
   </main>
   <Footer />
 
-  <div id="xvadur-chat-widget" style="position: fixed; right: 18px; bottom: 18px; z-index: 9999;"></div>
+  <div id="xvadur-chat-widget"></div>
   <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   <script>
     const host = document.getElementById('xvadur-chat-widget');
@@ -41,6 +41,28 @@ import { SITE } from "../config/site.mjs";
     widget.setAttribute('agent-id', 'agent_4701kef07b3kek295qxafqqh1apm');
     host?.appendChild(widget);
   </script>
+
+  <style>
+    #xvadur-chat-widget {
+      position: fixed;
+      right: 16px;
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 9999;
+    }
+
+    @media (max-width: 768px) {
+      #xvadur-chat-widget {
+        right: 10px;
+        bottom: calc(env(safe-area-inset-bottom) + 84px);
+        transform: scale(0.92);
+        transform-origin: bottom right;
+      }
+
+      #main-content {
+        padding-bottom: 140px;
+      }
+    }
+  </style>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
