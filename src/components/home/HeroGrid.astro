@@ -144,8 +144,36 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
     </AnimatedBlock>
   </div>
 
+  <!-- Kto som (moved higher + bigger) -->
+  <AnimatedBlock client:load delay={0.51}>
+    <div class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Kto som</p>
+      <div class="grid gap-3 md:gap-4 md:grid-cols-[1.3fr_.7fr] items-start">
+        <div>
+          <h3 class="text-2xl md:text-3xl font-bold" style="color: var(--color-text);">Adam Xvadur — builder AI recepcie pre zdravotníctvo</h3>
+          <p class="text-sm md:text-base mt-3" style="opacity:.78;">
+            Neprodávam teóriu. Staviam AI recepciu priamo na reálnych call flowoch ambulancií.
+            Cieľ je jednoduchý: menej zmeškaných hovorov, menej chaosu na linke, viac vybavených pacientov.
+          </p>
+          <p class="text-sm md:text-base mt-2" style="opacity:.78;">
+            V spolupráci so SemaforDent riešim praktickú integráciu do prostredia zubných kliník — krok po kroku,
+            s pilotom a merateľným výsledkom.
+          </p>
+        </div>
+        <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver);">
+          <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Focus</p>
+          <ul class="text-sm mt-2 space-y-2" style="opacity:.85;">
+            <li>• AI voice + booking flow</li>
+            <li>• Piloty v reálnej prevádzke</li>
+            <li>• Integrácie bez chaosu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </AnimatedBlock>
+
   <!-- Trust strip -->
-  <div class="trust-grid mt-4 grid gap-3" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+  <div class="trust-grid mt-6 md:mt-8 grid gap-3" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
     <div class="p-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal-sm); background-color: var(--color-bg);">
       <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Status</p>
       <p class="text-sm mt-1">Prvý pilot v príprave</p>
@@ -162,7 +190,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 
   <!-- Pain-first section -->
   <AnimatedBlock client:load delay={0.52}>
-    <div id="pain-points" class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+    <div id="pain-points" class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
       <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Ak toto bolí, sme fit</p>
       <h3 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--color-text);">Najčastejšie problémy na recepcii</h3>
       <div class="grid gap-3 md:gap-4 md:grid-cols-3 mt-4">
@@ -184,7 +212,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 
   <!-- Social proof / pilot evidence -->
   <AnimatedBlock client:load delay={0.55}>
-    <div class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+    <div class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
       <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Pilot signal</p>
       <h3 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--color-text);">Staviame na reálnej prevádzke, nie na demo slidoch.</h3>
       <div class="grid gap-3 md:gap-4 md:grid-cols-3 mt-4">
@@ -204,9 +232,41 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
     </div>
   </AnimatedBlock>
 
+  <!-- Dynamic ROI calculator -->
+  <AnimatedBlock client:load delay={0.58}>
+    <div id="roi-kalkulacka" class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Dynamická ROI kalkulačka</p>
+      <h3 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--color-text);">Koľko hovorov dnes strácate?</h3>
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="space-y-4">
+          <label class="block text-sm font-bold">Počet hovorov / mesiac: <span id="callsVal">800</span></label>
+          <input id="callsRange" type="range" min="200" max="3000" step="50" value="800" class="w-full" />
+
+          <label class="block text-sm font-bold">Zmeškané hovory (%): <span id="missedVal">25</span>%</label>
+          <input id="missedRange" type="range" min="5" max="60" step="1" value="25" class="w-full" />
+
+          <label class="block text-sm font-bold">Hodnota objednávky (€): <span id="valueVal">60</span></label>
+          <input id="valueRange" type="range" min="25" max="180" step="5" value="60" class="w-full" />
+        </div>
+
+        <div class="grid gap-3">
+          <div class="p-4" style="border: var(--border-brutal); background: #fff;">
+            <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Odhad mesačnej straty dnes</p>
+            <p id="lossOut" class="text-3xl font-bold mt-1" style="color: var(--color-red);">12 000 €</p>
+          </div>
+          <div class="p-4" style="border: var(--border-brutal); background: var(--color-silver);">
+            <p class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-blue-deep);">Potenciálne zachránené po nasadení*</p>
+            <p id="gainOut" class="text-3xl font-bold mt-1" style="color: var(--color-blue-deep);">7 200 €</p>
+            <p class="text-xs mt-2" style="opacity:.75;">*orientačný model pri 60% recovery zmeškaných hovorov</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </AnimatedBlock>
+
   <!-- How collaboration works -->
   <AnimatedBlock client:load delay={0.6}>
-    <div id="ako-prebieha-spolupraca" class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+    <div id="ako-prebieha-spolupraca" class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
       <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--color-blue-deep);">Ako prebieha spolupráca</p>
       <div class="grid gap-3 md:gap-4 md:grid-cols-3 mt-4">
         <div class="p-4" style="border: var(--border-brutal); background: #fff;">
@@ -227,7 +287,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 
   <!-- Mini FAQ -->
   <AnimatedBlock client:load delay={0.65}>
-    <div id="mini-faq" class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+    <div id="mini-faq" class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
       <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">Mini FAQ</p>
       <div class="grid gap-3 md:gap-4 md:grid-cols-3">
         <div class="p-4" style="border: var(--border-brutal); background: #fff;">
@@ -248,7 +308,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 
   <!-- Objections -->
   <AnimatedBlock client:load delay={0.68}>
-    <div class="mt-4 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
+    <div class="mt-6 md:mt-8 p-6 md:p-8" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);">
       <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-blue-deep);">Časté obavy</p>
       <div class="grid gap-3 md:gap-4 md:grid-cols-3">
         <div class="p-4" style="border: var(--border-brutal); background: var(--color-bg);">
@@ -269,7 +329,7 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
 
   <!-- Final CTA -->
   <AnimatedBlock client:load delay={0.7}>
-    <div class="mt-4 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: #FF3EA5;">
+    <div class="mt-6 md:mt-8 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: #FF3EA5;">
       <div>
         <p class="text-xs font-bold uppercase tracking-widest text-white opacity-80">Next step</p>
         <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mt-1">Do 20 minút zistíš, či má pilot pre tvoju prevádzku reálny ROI.</h3>
@@ -287,6 +347,43 @@ import AnimatedBlock from "../ui/AnimatedBlock.tsx";
       </div>
     </div>
   </AnimatedBlock>
+  <script>
+    const callsRange = document.getElementById('callsRange');
+    const missedRange = document.getElementById('missedRange');
+    const valueRange = document.getElementById('valueRange');
+
+    const callsVal = document.getElementById('callsVal');
+    const missedVal = document.getElementById('missedVal');
+    const valueVal = document.getElementById('valueVal');
+    const lossOut = document.getElementById('lossOut');
+    const gainOut = document.getElementById('gainOut');
+
+    function formatEUR(n) {
+      return new Intl.NumberFormat('sk-SK', { maximumFractionDigits: 0 }).format(n) + ' €';
+    }
+
+    function updateRoi() {
+      if (!callsRange || !missedRange || !valueRange) return;
+      const calls = Number(callsRange.value);
+      const missedPct = Number(missedRange.value) / 100;
+      const value = Number(valueRange.value);
+
+      const monthlyLoss = calls * missedPct * value;
+      const recoverable = monthlyLoss * 0.6;
+
+      if (callsVal) callsVal.textContent = String(calls);
+      if (missedVal) missedVal.textContent = String(Math.round(missedPct * 100));
+      if (valueVal) valueVal.textContent = String(value);
+      if (lossOut) lossOut.textContent = formatEUR(monthlyLoss);
+      if (gainOut) gainOut.textContent = formatEUR(recoverable);
+    }
+
+    [callsRange, missedRange, valueRange].forEach((el) => {
+      el?.addEventListener('input', updateRoi);
+    });
+
+    updateRoi();
+  </script>
 </section>
 
 <style>
