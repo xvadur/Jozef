@@ -29,9 +29,9 @@ const tiers = [
 import BrutalistButton from "../ui/BrutalistButton.astro";
 ---
 
-<section id="pricing" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 200ms;">
+<section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 pb-12 jozo-fade-in" style="animation-delay: 200ms;">
   <div
-    class="p-8 mb-3"
+    class="p-5 md:p-8 mb-3"
     style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-silver);"
   >
     <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--color-blue-deep);">Pricing</p>
@@ -42,7 +42,7 @@ import BrutalistButton from "../ui/BrutalistButton.astro";
   <div class="grid gap-3 md:grid-cols-3">
     {tiers.map(tier => (
       <div
-        class="p-8 flex flex-col justify-between jozo-press-card"
+        class="p-5 md:p-8 flex flex-col justify-between jozo-press-card"
         style={`border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: ${tier.highlight ? 'var(--color-blue)' : 'var(--color-bg)'};`}
       >
         <div>
