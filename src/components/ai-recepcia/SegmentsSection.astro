@@ -1,0 +1,46 @@
+---
+const segments = [
+  {
+    icon: "🏨",
+    title: "Hotely & penzióny",
+    desc: "24/7 dopyty hostí, pred-kvalifikácia rezervácií, menej zmeškaných leadov.",
+    points: ["SK/EN komunikácia", "Lead summary pre recepciu", "Rýchly callback flow"],
+  },
+  {
+    icon: "🦷",
+    title: "Zubné ambulancie",
+    desc: "Objednávanie pacientov, triáž hovorov a menej výpadkov na linke.",
+    points: ["No-show pripomienky", "Urgent eskalácia", "Auditovateľné logy"],
+  },
+  {
+    icon: "🏥",
+    title: "Kliniky & zdravotníctvo",
+    desc: "Škálovateľný front-desk support pri vysokom call volume.",
+    points: ["Pravidlá podľa oddelenia", "Queue prioritizácia", "Prehľad výkonu"],
+  },
+];
+---
+
+<section id="segmenty" class="max-w-7xl mx-auto px-6 pb-12 jozo-fade-in" style="animation-delay: 120ms;">
+  <div class="p-8 mb-3 flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
+    style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-yellow);">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest mb-1">Segmenty</p>
+      <h2 class="text-3xl font-light">Kde AI recepcia dáva okamžitý biznis efekt</h2>
+      <p class="font-light mt-1" style="opacity: 0.8;">Začíname tam, kde je najvyšší tlak na hovory a najväčšia strata leadov.</p>
+    </div>
+  </div>
+
+  <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+    {segments.map(s => (
+      <article class="p-8 jozo-press-card" style="border: var(--border-brutal); box-shadow: var(--shadow-brutal); background-color: var(--color-bg);">
+        <span class="text-3xl mb-3 block">{s.icon}</span>
+        <h3 class="text-base font-semibold mb-1">{s.title}</h3>
+        <p class="text-sm font-light mb-3" style="opacity: .75;">{s.desc}</p>
+        <ul class="text-xs font-light space-y-1" style="opacity:.8;">
+          {s.points.map((p) => <li>• {p}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
